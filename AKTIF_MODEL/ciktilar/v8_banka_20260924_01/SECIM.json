@@ -1,0 +1,10 @@
+{
+ "banka_sayisi": 80,
+ "gelistirme_sayisi": 122,
+ "banka_muhurlu_sha256": "420dfc2a4a122a8183b2feecd229fca05c79eb06eff39398a156f94ff7bde9dd",
+ "gelistirme_evreni_sha256": "343dead42d44c04b86f4e7ce6b08da477b98afa63e626243865fd6cf2d6b815c",
+ "drand_yedek_yol": false,
+ "drand_tur_json_sha256": "a2231238a589617b2ee1b93e08e2637128bc718aee051b62dc8943ad923a98f7",
+ "secim_zamani_utc": "2026-09-23T22:02:44+00:00",
+ "damga_sha256": "ca6b38263d3ead361502faa89988492ce6cf4fc819ffdd6a8ff9fcdaea96ce50"
+}

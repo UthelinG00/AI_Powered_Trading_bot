@@ -1,0 +1,18 @@
+[Unit]
+Description=v8 kilit Adim 3 - Duzey 2 kalibrasyon kosusu (dondurulmus kod; bkz. ciktilar/v8_kalibrasyon_20260929_01/README.md)
+After=network.target
+# Belirlenimci bir hata sonsuz donguye girmesin: 6 saatte en fazla 3 yeniden baslatma, sonra durur (neden aranir).
+StartLimitIntervalSec=21600
+StartLimitBurst=3
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/v8/AKTIF_MODEL/v8
+ExecStart=/bin/sh -c 'exec /opt/v8/venv/bin/python -m kalibrasyon.kosucu ../ciktilar/v8_kalibrasyon_20260929_01/duzey2 duzey2 --isci 12 >> ../ciktilar/v8_kalibrasyon_20260929_01/duzey2_sunucu.txt 2>&1'
+Restart=on-failure
+RestartSec=120
+KillMode=control-group
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

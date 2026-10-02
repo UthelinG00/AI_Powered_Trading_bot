@@ -1,0 +1,17 @@
+{
+ "mimari": "A",
+ "birim": 529,
+ "damga_birim": 539,
+ "cozulen": 539,
+ "kosu": {
+  "bitmis": 539,
+  "bu_kosuda": 539,
+  "kalan": 0
+ },
+ "isci": 12,
+ "sure_kosu_sn": 884.8,
+ "sure_hukum_rapor_sn": 10.7,
+ "karar": "RET",
+ "rapor_bolum": 13,
+ "gecti": true
+}

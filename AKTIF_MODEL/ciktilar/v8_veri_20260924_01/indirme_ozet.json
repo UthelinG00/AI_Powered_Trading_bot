@@ -1,0 +1,13 @@
+{
+ "zaman_utc": "2026-09-24T07:44:14+00:00",
+ "plan_zip": 8596,
+ "sonuc_bu_kosu": {
+  "TAMAM": 8345,
+  "YOK_404": 251
+ },
+ "gelistirme_evreni_sha256": "343dead42d44c04b86f4e7ce6b08da477b98afa63e626243865fd6cf2d6b815c",
+ "donem": [
+  "2023-07",
+  "2026-06"
+ ]
+}

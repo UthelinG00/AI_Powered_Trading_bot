@@ -1,0 +1,63 @@
+yukleme 24 sn; veri kimligi 5907a89bbe56adc0c65a80ad06c9e852b4e7bb58c40b000cab7615e7ddfd23f7
+PIT evren 37 sn; 143 Pazartesi
+{
+ "onkayit": "ONKAYIT.md",
+ "veri_kimligi": "5907a89bbe56adc0c65a80ad06c9e852b4e7bb58c40b000cab7615e7ddfd23f7",
+ "satir": 1825,
+ "hafta": 122,
+ "disarida": {
+  "har_s2_tanimsiz": 120,
+  "hedef_tanimsiz": 1
+ },
+ "qlike_har": 0.4505933332653978,
+ "qlike_ewma": 0.4862157119017007,
+ "oran_har_ewma": 0.926735443211048,
+ "bootstrap_takvim_hafta": 122,
+ "bootstrap_fark_kantil": {
+  "0.05": -0.06383409601249786,
+  "0.5": -0.036632651835558694,
+  "0.95": -0.007949894725975987
+ },
+ "kosul_i": true,
+ "kosul_iv": true,
+ "karar": "HAR",
+ "betimsel": {
+  "stres_hafta_hedef": 13,
+  "stres_hafta_sayisi": 13,
+  "stres_ort_qlike_farki": 0.0851790817400616,
+  "stres_haftalari": [
+   "1722211200000",
+   "1740960000000",
+   "1780272000000",
+   "1769385600000",
+   "1719792000000",
+   "1724630400000",
+   "1762732800000",
+   "1734307200000",
+   "1769990400000",
+   "1763337600000",
+   "1768780800000",
+   "1759708800000",
+   "1773619200000"
+  ],
+  "Y_F_har_kantil": {
+   "0.95": 2.7185507225186076,
+   "0.99": 6.495439408808728
+  },
+  "Y_F_ewma_kantil": {
+   "0.95": 2.748793914009116,
+   "0.99": 6.038882225142269
+  }
+ },
+ "dondurulan": {
+  "beta": [
+   1.87170711869654,
+   0.22323371993771915,
+   -0.05079610500073497,
+   0.4417142448298703
+  ],
+  "n_egitim": 2140,
+  "son_pazartesi_yuruyen_s2_bilgi": 0.8799821192152635,
+  "son_pazartesi_ms": 1782086400000
+ }
+}

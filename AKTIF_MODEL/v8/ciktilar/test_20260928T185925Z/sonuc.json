@@ -1,0 +1,79 @@
+{
+ "motor_kimligi": "4c6128475e3069f077fcaf1e0fcdac03cf18cd587d1747fa2f2fa0bb3f2a72ae",
+ "toplam": 12,
+ "basarisiz": 0,
+ "sonuclar": {
+  "test_v8_bant.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_boyutlama.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_emir.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_funding.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_geri_test.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_gunluk_durum.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_hijyen_evren.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_karar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_katilim_maliyet.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_risk.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_sinyal.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_tavanlar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  }
+ }
+}

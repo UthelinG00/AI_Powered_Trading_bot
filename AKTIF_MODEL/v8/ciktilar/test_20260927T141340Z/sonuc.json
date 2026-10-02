@@ -1,0 +1,43 @@
+{
+ "motor_kimligi": "53e0543dc98954ab6dce694f147cf5671ecd198ad07f0ee5c0a4938a97dec128",
+ "toplam": 6,
+ "basarisiz": 0,
+ "sonuclar": {
+  "test_v8_bant.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_boyutlama.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_katilim_maliyet.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_risk.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_sinyal.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_tavanlar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  }
+ }
+}

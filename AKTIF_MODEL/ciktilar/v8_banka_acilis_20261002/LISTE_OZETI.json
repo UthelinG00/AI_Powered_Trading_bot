@@ -1,0 +1,38 @@
+{
+ "betik_sha256": "e9339c104322ac98100693d771426f9366039ebbe66679429fcb0b6a473e88aa",
+ "checksum_dosyasi": 19718,
+ "coin": {
+  "BTC_ETH": 2,
+  "D": 120,
+  "K": 80
+ },
+ "eylul_funding_kaynagi": {
+  "api": 48,
+  "arsiv": 148,
+  "yok": 6
+ },
+ "eylul_gunluk_kline": 4462,
+ "girdi_sha256": {
+  "evren": "9148fb8e02271f33196b92c4fedcb031e3cf91aad202f51547543e2d9d70bac3",
+  "ham": "5ad6f8958375384738b7bd5df70eb8b019ffc26692483b8264e4ceb3fdf91bc2",
+  "muhur": "420dfc2a4a122a8183b2feecd229fca05c79eb06eff39398a156f94ff7bde9dd"
+ },
+ "grup_dosya": {
+  "BE": 224,
+  "D": 8401,
+  "K": 11141
+ },
+ "liste_sha256": "03b1783772d39fb0db81dfc61f5f1acd611efb00cfd4ad92adb7a978eb751af8",
+ "sureklilik_sorunu": 8,
+ "sureklilik_turleri": {
+  "erken_bitis": 8
+ },
+ "toplam_bayt_zip": 243054117,
+ "toplam_dosya": 39484,
+ "tur_dosya": {
+  "fundingRate": 7557,
+  "fundingRate_api": 48,
+  "klines": 12161
+ },
+ "veri_dosyasi": 19766
+}

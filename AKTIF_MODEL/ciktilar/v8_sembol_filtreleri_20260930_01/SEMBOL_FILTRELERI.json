@@ -1,0 +1,718 @@
+{
+ "alinma_utc": "2026-09-30T01:09:20Z",
+ "bulunan": 117,
+ "eksik": [
+  "BTCSTUSDT",
+  "EOSUSDT",
+  "HNTUSDT",
+  "MATICUSDT",
+  "SRMUSDT"
+ ],
+ "istenen": 122,
+ "kaynak": "https://fapi.binance.com/fapi/v1/exchangeInfo",
+ "kural": "adim = max(LOT_SIZE, MARKET_LOT_SIZE stepSize); MIN_NOTIONAL.notional",
+ "tablo": {
+  "1000LUNCUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "1000SHIBUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ACHUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ADAUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "AGIXUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "AGLDUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "AMBUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ANKRUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "API3USDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ARKMUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ARKUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ARPAUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ARUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ATAUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "AVAXUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BALUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BCHUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 20.0
+  },
+  "BICOUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BLURUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BLZUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BNTUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BNXUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "BTCUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 50.0
+  },
+  "CELRUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "CKBUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "COMPUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "CTKUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "CTSIUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "CVCUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DASHUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DENTUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DGBUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DODOXUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DOGEUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DOTUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DUSKUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "DYDXUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "EDUUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "EGLDUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ENSUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ETCUSDT": {
+   "adim": 0.01,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 20.0
+  },
+  "ETHUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 20.0
+  },
+  "FETUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "FILUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "FLMUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "FTMUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "FTTUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "FXSUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "GALAUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "GLMRUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "GMTUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "GMXUSDT": {
+   "adim": 0.01,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "GRTUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "HBARUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "HFTUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "HOOKUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "HOTUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ICPUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ICXUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "IDEXUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "IMXUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "INJUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "IOTAUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "IOTXUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "JASMYUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "JOEUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "KAVAUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "KEYUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "KNCUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "KSMUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "LINAUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "LITUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "LRCUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "MAGICUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "MANAUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "MAVUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "MKRUSDT": {
+   "adim": 0.001,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "MTLUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "NEOUSDT": {
+   "adim": 0.01,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "NKNUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "NMRUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "OCEANUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "OPUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "OXTUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "PEOPLEUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "PHBUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "QNTUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RADUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RAYUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RDNTUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RLCUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RUNEUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "RVNUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SANDUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SEIUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SFPUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SNXUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SOLUSDT": {
+   "adim": 0.01,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SPELLUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SSVUSDT": {
+   "adim": 0.01,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "STORJUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "SUIUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "THETAUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "TLMUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "TRBUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "TRUUSDT": {
+   "adim": 1.0,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "TRXUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "UMAUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "UNFIUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "UNIUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "VETUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "WAVESUSDT": {
+   "adim": 0.1,
+   "durum": "SETTLING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "WOOUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "XMRUSDT": {
+   "adim": 0.001,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "XRPUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ZENUSDT": {
+   "adim": 0.1,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  },
+  "ZILUSDT": {
+   "adim": 1.0,
+   "durum": "TRADING",
+   "kontrat": "PERPETUAL",
+   "min_notional": 5.0
+  }
+ }
+}

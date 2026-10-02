@@ -1,0 +1,390 @@
+{
+ "motor_kimligi": "db13ddad410748c65a82326b1a1fbf5872ec8c3dffc490219f77635aecabb63c",
+ "kod_kimlikleri": {
+  "motor": "db13ddad410748c65a82326b1a1fbf5872ec8c3dffc490219f77635aecabb63c",
+  "adaptor": "503dd1ec7bc682c13e1ae89c7c61e6bd8d7380ca5c101e32cfadab40ddaad920",
+  "kapi": "05394a018cdaf4e4466836ab7cb80462e9fd5b48d0a7d61c1afb9c5d2dbc2ccf",
+  "kalibrasyon": "44dedb33f5dbd18fe0b7e4c16fb370efd4e9ae9eff3860359c4f0f2414d738b4",
+  "banka": "dbab37d18cfed2435eaa019af2ce83f0721844a0fd623f6c92d6ef48b3199056",
+  "banka_kos": "17a3f2942a295244c9471d067339ea1599cda5df0cefbdf856a20c2a15823a2e",
+  "testler": "dfa1498bf0e30b5649a71dcea77ae7e12554ce264b05c08c1a3a15eead4ffc33",
+  "kilit.py": "ef1c7261d8c1ead1ec5e197c33fd1405cf0d375acc21dccbcd55ba8ac659b246",
+  "v8_calistir.py": "3daa29117470addbb17a2cf3d88b2c54b63f77b25de9959afd600681d0223693"
+ },
+ "toplam": 59,
+ "basarisiz": 0,
+ "sonuclar": {
+  "test_v8_b5_a_esdegerlik.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_acilis.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [
+    "{\"durum\": \"DUR\", \"neden\": \"T1: DONDURMA ile calisan kod farkli: ['motor_sha256', 'tohum_banka_turetimi']\"}",
+    "{\"VERI_DENETIM_sha256\": \"47c7a9536edbed417f68cdc74dac244976f80287a696b1cca51fcf0fe6cf8093\", \"T2\": false, \"dosya_sayisi\": 6, \"aday\": 3}",
+    "{\"VERI_DENETIM_sha256\": \"4632e5018663872bc3cd0527ce8873a338b6b132c50bae739366f4e2f74981db\", \"T2\": true, \"dosya_sayisi\": null, \"aday\": null}",
+    "{\"durum\": \"HATA\", \"neden\": \"veri_denetim hatasi (ayrinti sonuc/hata/veri_denetim.age; duz sha256 240a83e5a0029eae2813b10246526bdeb9c3d0286101bf29de7863d46ae5f60a)\"}",
+    "{\"durum\": \"DUR\", \"neden\": \"VERI_DENETIM.json bu acilisin yeniden hesaplanan denetimiyle ayni degil\"}"
+   ],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_age.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_anonim.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_ayar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_degerlendirme.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_hukum.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_hukum_dondur.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [
+    "{\"VERI_DENETIM_sha256\": \"a502b45d70fc97624323aed3991ecce849d17951efaefd590541463230b7fd48\", \"T2\": false, \"dosya_sayisi\": 6, \"aday\": 3}",
+    "{\"durum\": \"DUR\", \"neden\": \"T1: DONDURMA'daki kilit dosyasi yok ya da sha256'si farkli\"}",
+    "{\"durum\": \"DUR\", \"neden\": \"arguman hatasi (kullanim: betik basligi)\"}"
+   ],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_kelly.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_kosucu.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_long_beta.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_olcutler.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_pnl.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_rapor.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_stres.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_uctan_uca.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_veri.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_veri_denetim.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_banka_yurutucu.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_bant.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_boyutlama.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_carry.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey1.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey1_esik.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey1_karar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey1_olcut.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey2_funding_desen.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_duzey2_uretec.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_emir.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_funding.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_geri_test.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_gunluk_durum.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_har.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_har_banka.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_har_motor.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_hijyen_evren.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_birim.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_kapilar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_kosucu.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_rapor_uret.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_toplama.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kalibrasyon_yurutucu.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_betimsel.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_betimsel_kayit.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_faktorler.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_istatistik.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_kosu.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [
+    "kosu delist90: 18.1 sn",
+    "DENETIM.json sha256 02ffab59b044b5955d07bf96870f687c07a6193d7206b9f45bc1aaaf4de15204",
+    "HUKUM.json sha256 ecc703c3b891cbae31ebee679bf9361a465d6f37d3db5cd10ae2e797a9e074d0",
+    "HATA: kapi kosusu durdu; ayrinti muhur/HATA.txt (sha256 7b912f8528abed8a9315ea19d0e1be354b7629766260a834a015a867643713c4)",
+    "HATA: kapi kosusu durdu; ayrinti muhur/HATA.txt (sha256 7b912f8528abed8a9315ea19d0e1be354b7629766260a834a015a867643713c4 (HATA.txt yazilamadi))"
+   ],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_motor_ciktilari.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_olcutler.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kapi_seriler.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_karar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_katilim_maliyet.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_kilit.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [
+    "{\"duzey1\": \"TAMAM\", \"duzey2\": \"TAMAM\", \"durum\": \"TAMAM\"}"
+   ],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_mimari_b.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_rejim_null.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_risk.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_sinyal.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_tavanlar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_veri_yukleyici.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  }
+ }
+}

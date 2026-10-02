@@ -1,0 +1,1 @@
+{"duzey1": "TAMAM", "duzey2": "TAMAM", "durum": "TAMAM"}

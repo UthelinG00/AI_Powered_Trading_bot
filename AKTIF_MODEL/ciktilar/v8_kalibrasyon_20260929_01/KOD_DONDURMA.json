@@ -1,0 +1,30 @@
+{
+ "aciklama": "Kilit Adim 3 kalibrasyon kodu dondurma kaydi (P14g). Kosular bu kimliklerle yapilir; birim dosyalari ayni dort kimligi tasir.",
+ "kimlikler": {
+  "kod": "c442f5ba779c36411317662dc8422a1a296a5a1d1b6b71369eee6f15356c69e0",
+  "motor": "7e2320f4073164c15d298be40a713caaf234130c6cd94f6d45e10a650b7b597f",
+  "parametre": "80c67909654742210e318b1b4e37da77edf9f007a35f26c61faf600100700a6f",
+  "ortam": "python 3.12.14; numpy 2.5.1"
+ },
+ "har_sonuc_sha256": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+ "har_beta": [
+  1.87170711869654,
+  0.22323371993771915,
+  -0.05079610500073497,
+  0.4417142448298703
+ ],
+ "deneme_defteri_sha256": "3aab2d2caf54f3bcff996049b564ec35993266f70751c40b34c8e46e2c1b5d10",
+ "N_REV1": 159,
+ "N_v8": 168,
+ "N": 327,
+ "on_kayit_sha256": "9b002545dfbb8b5e6516117ab128ab2947b12760834e567b7f6acc906e1457aa",
+ "test_raporu": "v8/ciktilar/test_20260929T195741Z/sonuc.json (32 dosya, 0 basarisiz)",
+ "codex": [
+  "T10",
+  "T11",
+  "T12",
+  "T13",
+  "T14 (8/8 KAPANDI, yeni bulgu yok)"
+ ],
+ "kod_commit_ust": "cbef5614462e20311683d32a6a34464bb0968969"
+}

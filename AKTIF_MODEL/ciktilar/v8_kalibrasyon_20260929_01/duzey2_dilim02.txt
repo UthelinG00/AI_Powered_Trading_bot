@@ -1,0 +1,11 @@
+is listesi ae68a5eb3051; taban 3140; bitmis 222; kuyruk 3648
+tamamlanan 223 (bu kosuda 1); kuyruk 3634; suren 13
+tamamlanan 224 (bu kosuda 2); kuyruk 3633; suren 13
+tamamlanan 225 (bu kosuda 3); kuyruk 3642; suren 13
+tamamlanan 226 (bu kosuda 4); kuyruk 3641; suren 13
+tamamlanan 227 (bu kosuda 5); kuyruk 3640; suren 13
+tamamlanan 228 (bu kosuda 6); kuyruk 3639; suren 13
+tamamlanan 229 (bu kosuda 7); kuyruk 3638; suren 13
+tamamlanan 230 (bu kosuda 8); kuyruk 3637; suren 13
+tamamlanan 231 (bu kosuda 9); kuyruk 3636; suren 13
+tamamlanan 232 (bu kosuda 10); kuyruk 3635; suren 13

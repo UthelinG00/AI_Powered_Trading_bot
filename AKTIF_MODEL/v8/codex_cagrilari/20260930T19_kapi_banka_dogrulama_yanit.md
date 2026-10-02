@@ -1,0 +1,51 @@
+## kapanis
+
+İncelenen HEAD: `9ad4c3b75e05818a0bba554a02582136d3b1381f`; çalışma kopyasının fiilî dalı `claude/v8-502e-dizustu`. İnceleme statiktir: dosya yazılmadı, kod/test çalıştırılmadı, yasaklı kaynaklar okunmadı. Aşağıda kod yolları `AKTIF_MODEL/v8/`, `KAL/` kalibrasyon çıktı klasörü, `BANKA` banka ön-kayıt belgesidir.
+
+T18-CIDDI-1 / Düzey 2 bağı KAPANDI — Ortak özet bitişte yazılıyor, toplamadan önce kimlik/dondurma ve kaynak özeti karşılaştırılıyor, hesap sonrasında değişiklik reddediliyor ve kilit tüketilen özeti bitişle eşliyor (`KAL/kanit.py:47`, `KAL/bitis.py:107`, `KAL/topla.py:92`, `KAL/topla.py:119`, `kilit.py:197`).
+
+T15-3 / U-59-ek-2 KISMEN — Düzey 2 açığı kapanmış olsa da Düzey 1’in tüketilen dosyaları mevcut `DUZEY1_OZET.json` ile bağlanmıyor (`KAL/topla.py:101`, `kilit.py:193`).
+
+T18-CIDDI-2 KAPANDI — `sadece_sharpe` birincille aynı gün maskesini uyguluyor; üretim kalibrasyon penceresinde hariç gün bulunmadığından değerler ve sıraları değişmiyor (`banka/degerlendirme.py:89`, `banka/degerlendirme.py:140`, `kalibrasyon/duzey2_uretec.py:51`, `kalibrasyon/yurutucu.py:120`; ilgili testler `testler/test_v8_banka_degerlendirme.py:57`).
+
+T18-CIDDI-3 KAPANDI — BANKA’nın “aksi yazılmadıkça birincil ayar” kuralına uygun `b5` ayrımı, B yan birimlerinin ayrıştırma nedeniyle durmasını gideriyor; bağımsız A birimi B5 kapsamını koruyor (`BANKA:401`, `banka/degerlendirme.py:148`, `banka_kos/yurutucu.py:29`, `banka_kos/yurutucu.py:201`, `banka_kos/ayar.py:76`).
+
+T18-B5 açık sorusu KISMEN — Özgün epizota atama uygulanmış, fakat bütün Düzey 2 çıktılarının değişmeyeceği gerekçesi gerçek A pozisyonları için geçerli değil (`banka/pnl.py:175`, `BULUT_OTURUMU.md:130`, `motor/geri_test.py:166`).
+
+**Düzey 1 bağı zorunlu olmalı.** Üretici betiğin bulunmaması, mevcut özeti karşılaştırmayı engellemez: toplama öncesinde iş listesi hash’i, dört kimlik, beklenen birim kümesi ve her birimin **JSON dosya baytlarının SHA256’sı = `json_sha256`**, **NPZ dosya baytlarının SHA256’sı = `npz_sha256`** doğrulanmalı; NPZ hash’i ayrıca zarfın `govde.npz_sha256` değeriyle aynı olmalı. İç `govde_sha256`, bütün JSON dosyasının hash’i yerine kullanılamaz. Mevcut özetin hash’i ve doğrulanmış dosya haritasından türetilen tüketim özeti TOPLAMA’ya taşınmalı, kilit bunları karşılaştırmalı; eski özet sessizce yenilenmemeli (`KAL/DUZEY1_OZET.json:2`, `KAL/DUZEY1_OZET.json:13`, `kalibrasyon/birim.py:102`, `kalibrasyon/birim.py:142`).
+
+Gerçek B yürütme testi ızgara/Kelly/çıkarma/K-evren yollarını kapsıyor; A/B uçtan uca testleri ise birkaç gerçek koşunun şablonlarını çoğaltıyor. Özellikle B sınıfındaki `a_ayristirma_A` sonucu bağımsız A yürütmesinden gelmiyor, B yan-birim şablonundan kopyalanıyor; varlık kontrolü bağımsız A hesabını doğrulamıyor (`testler/test_v8_banka_yurutucu.py:60`, `testler/test_v8_banka_uctan_uca.py:46`, `testler/test_v8_banka_uctan_uca.py:136`).
+
+18 mevcut ayrıştırma alanının hesap akışında değişiklik saptamadım; `fon_yonu` parçaların sırasını ve ters işaret aritmetiğini koruyor, dolayısıyla geçerli motor olaylarında `carry_fon_long/short` hesabı aynı kalıyor. Bu, bu oturumda çalıştırılmış bayt eşitliği kanıtı değildir (`motor/ayristirma.py:117`, `motor/ayristirma.py:134`, `motor/ayristirma.py:303`). Yeni importta döngü saptamadım; motor banka paketini içe aktarmıyor, fakat dosya değişiklikleri hem motor hem kalibrasyon kod kimliğini değiştiriyor ve güncel eşdeğerlik gerekiyor (`banka/pnl.py:15`, `motor/ayristirma.py:37`, `kalibrasyon/birim.py:43`, `kalibrasyon/birim.py:47`). `topla.main` parametrelerinin varsayılanları üretim yollarını koruyor; normal giriş hâlâ `main()` ve yeni Düzey 2 alanı olmayan eski TOPLAMA kilitte reddediliyor (`KAL/topla.py:107`, `KAL/topla.py:135`, `kilit.py:197`).
+
+## b5
+
+**(a)** Özgün saat parçaları gerçek kayıt/dolgu/ters kayıt için doğru kuruluyor; hedef `ep[j]`, özgün saatin başındaki pozisyona karşılık geliyor ve arada sıfıra inip aynı yönde açılma yeni epizot numarası üretiyor (`motor/ayristirma.py:104`, `banka/pnl.py:148`, `banka/pnl.py:155`, `banka/pnl.py:178`). Netleme pencere içindeki farklı özgün saatleri ayrı anahtarda tutuyor; farklı mevcut veya hedef epizotlar da birleşmiyor. Bu nedenle epizotlar arası yanlış aktarımı genel bir toplamla gizlemiyor; ancak **tam ters kayıt tek başına aynı anahtar anlamına gelmiyor** (`banka/pnl.py:175`). Pencere öncesinde özgün saatler `0/None` ile birleştiriliyor: saat kimliği ayrıntısı kaybolsa da aynı mevcut/hedef epizota yapılan aktarımın toplamı korunuyor. Kesintisiz devam kontrolü, yalnız pencere içinde kaydedilen tutarın alınması ve kayıt saatinin maskelenmesi güncel BANKA netleştirmesiyle tutarlı; paydanın nakit zamanında kalması bilinçli bir kural (`banka/degerlendirme.py:104`, `banka/degerlendirme.py:115`, `BANKA:819`). Dolgu defteri ise motorla **her durumda aynı küme değil**: `coin_pnl` kapsam silmesini yapıyor, funding ve karar kayıtlarındaki budamayı uygulamıyor (`banka/pnl.py:95`, `motor/durum.py:144`, `motor/durum.py:164`). Tanımlı geç kayıt penceresi ve azami borsa aralığı içinde bu eski kayıtlar sonraki ters kaydın kapsamına giremez; bu sınırlar altında atıf hatası saptamadım. Aynı saatte çoklu gerçek kayıtta `ters_kayit → funding` sırası her kapsamı sonraki kayıttan önce düşürüyor (`motor/funding.py:79`, `motor/funding.py:124`, `banka/pnl.py:97`).
+
+**(b)** Karıştırılmamış üreteç yollarında ek dolgu kaynağı saptamadım: listelenme sonrası ilk kayıt 8h eşiğinden önce geliyor; 4h başlangıcında aralık kısalıyor; ölüm öncesi hacim çarpanı pozitiftir ve funding’i kesmiyor; ölüm sonrasında bar akışı duruyor; borsa boşluğu funding takvimini kesmiyor. Üreteç ayrıca sıfır hacimli bar üretmiyor; maske ve uzlaşma funding takvimine yeni boşluk eklemiyor (`kalibrasyon/duzey2_uretec.py:104`, `kalibrasyon/duzey2_uretec.py:135`, `kalibrasyon/duzey2_uretec.py:161`, `kalibrasyon/duzey2_uretec.py:170`, `motor/funding.py:149`). Dolayısıyla oluşan 4h→8h dolgularının S+8’de kapsanması sağlam; fakat **kalibrasyonun etkilenmediği sonuç zinciri sağlam değil**: gerçek A emirleri 01:00 sonrasında da kısmen dolabilir (`motor/geri_test.py:116`, `motor/geri_test.py:166`, `motor/emir.py:89`). Örneğin S+6 funding dolgusu eski long epizota yazıldıktan sonra aynı saatin dolumu pozisyonu short’a geçirirse, S+8 ters kaydı yeni epizota yazılır; eski saate ait parçaların mevcut-epizot anahtarları farklı olur ve yeni B5 atfı eski sonucu değiştirir (`banka/pnl.py:177`). Bu, çalıştırılmış bir kalibrasyon bulgusu değil, evrensel gerekçeye koddan çıkarılan karşı örnektir. B’nin sanal trend miktarları için 01:00 gerekçesi geçerlidir (`motor/ayristirma.py:186`). Mevcut kanıt yalnız tek yolun iki dönüşünde dört kısaltılmış koşuyu gösteriyor; dört gövdenin hash eşitliği günlükte bildirilmiş, çıktı dosyası yalnız olay/epizot sayımlarını taşıyor (`ciktilar/v8_b5_desen_20260930_01/b5_desen.py:30`, aynı klasörde `b5_desen_cikti.txt:1`, `BULUT_OTURUMU.md:130`). Altı yolluk veri testi pozisyon geçişlerini sınamıyor; standart eşdeğerlik de yalnız yol 0/1’i kapsıyor (`testler/test_v8_duzey2_funding_desen.py:30`, `KAL/esdegerlik_502e.py:30`). **Bütün Düzey 2’yi hemen yeniden koşmak gerektiği gösterilmiş değil; yeniden koşuya gerek olmadığı da gösterilmemiş.** Tam A birincil yollarında ilgili epizot geçişleri ve eski/yeni B5 çıktıları doğrulanmalı; fark çıkan birimler ve toplama yeniden üretilmeli. Null yolları bloklarla farklı funding boşlukları oluşturabilir, ancak B5 tüketmezler; “tek desen” iddiası onlara genellenmemeli (`banka/rejim_null.py:126`, `kalibrasyon/yurutucu.py:143`).
+
+## yeni_bulgular
+
+[CIDDI] Düzey 1 tüketimi önceden kaydedilmiş kanıta bağlı değil — `KAL/topla.py:101`, `kilit.py:193` — Aynı kimliklerle iç bütünlüğü geçerli başka JSON/NPZ çifti, mevcut Düzey 1 özetiyle karşılaştırılmadan eşik hesabına girebilir — Yukarıdaki dosya hash’i ve birim kümesi bağını toplama öncesinde, sonrasında ve kilitte zorunlu yapın.
+
+[CIDDI] Düzey 2 B5 eşdeğerliği yanlış zamanlama varsayımına dayanıyor — `BULUT_OTURUMU.md:130`, `motor/geri_test.py:166`, `banka/pnl.py:177` — Gün içi A epizot geçişleri dolgu ve ters kaydı farklı netleme anahtarlarına taşır; dört kısaltılmış koşu genel etkisizliği kanıtlamaz — A birincil yollarının ilgili geçişlerini ve B5 eşitliğini doğrulayın; etkilenen sonuçları yeniden üretin.
+
+[ORTA] R3 evren kümesi çıkmış isimleri yeniden alabilir — `BANKA:839`, `motor/hedef.py:162` — `coinler − maskeli − sabit`, güncel evren dışında kalan pozisyonlu/devreden isimleri de içerir; “aynı PIT evren” koşulunu sağlamaz — Güncel `evren` üyeliğini zorunlu tutun; örneğin uygunluk kümesini `hedef.a_t` üzerinden tanımlayın.
+
+[ORTA] R3 aynı gün satış kuralı motorun icra koşullarıyla çelişiyor — `BANKA:842`, `motor/emir.py:80`, `motor/geri_test.py:81` — İşlem dışı/barı olmayan isim aynı gün satılamayabilir; kısmi dolum ve delist beklemesi sırasında nakde geçmiş sayılamaz — “Satılır” yerine çıkış hedefi/emri tanımlayın; gerçekleşene kadar pozisyon/funding/değerleme, devreden emir ve sonraki aylık bütçe kurallarını açıkça sabitleyin.
+
+## kararlar
+
+U-59-ek-4 ITIRAZ — Düzey 2 bağı doğru; Düzey 1’i yalnız kaydetmek tüketilen girdilerin mevcut kanıtla eşleşmesini sağlamıyor.
+
+U-65 KABUL — Null ve yan birimlerin gün maskesi birincille aynı; hariç günsüz kalibrasyon Sharpe hesabı değişmiyor.
+
+U-66 ITIRAZ — Özgün epizot atfını kabul ediyorum; bütün Düzey 2 çıktılarının değişmediği iddiası A’nın gün içi dolumlarını dışlıyor.
+
+U-67 KABUL — B5’in birincille sınırlanması doğru; bağımsız A korunuyor, R8 Kelly carry betası için gereken ayrıştırma hâlâ açık.
+
+R3 ITIRAZ — (b) `coinler` PIT evren değildir; (d–e) satılamayan pozisyon ve devreden emir kuralları netleşmeli; diğer ana tercihler uygun.
+
+## genel_hukum
+
+Kapı henüz yalnız sayılan dizüstü adımlarıyla kilide hazır değil: önce Düzey 1 bağı ve A yollarındaki B5 eşdeğerlik boşluğu kapatılmalı, R3 tanımı netleştirilmeli; ardından güncel eşdeğerlik, 3.09, toplama, birleştirme ve tam takım/V1 tamamlanmalı. Banka koşucusunun T18’deki iki yürütme engeli giderilmiş olsa da R3 dışında veri yükleyici, T2, R2–R17/raporlama ve tam motorlu uçtan uca doğrulama açık olduğundan banka yürütmesine hazır hükmü veremem (`ILERLEME_BANKA.md:90`, `ILERLEME_BANKA.md:95`, `ILERLEME_BANKA.md:99`).

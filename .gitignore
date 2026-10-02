@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+venv/
+AKTIF_MODEL/v8/ciktilar/test_2026100[3-9]*/
+AKTIF_MODEL/ciktilar/v8_veri_20260924_01/ham/

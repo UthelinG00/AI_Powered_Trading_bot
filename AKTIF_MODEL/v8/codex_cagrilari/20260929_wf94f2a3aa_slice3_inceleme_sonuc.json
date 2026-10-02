@@ -1,0 +1,459 @@
+{
+ "onayli": [
+  {
+   "siddet": "ORTA",
+   "dosya": "AKTIF_MODEL/v8/motor/carry.py",
+   "satir": 58,
+   "baslik": "Eksik funding olay sayımı Δ'yı gap başında (a) hesaplıyor; §2.6 tespit anındaki Δ ile sayılan olayı kaçırıp 2 olaylı ismi carry adayı yapıyor",
+   "kural": "MIMARI §4.1 'Son 30 günde birden fazla eksik funding olayı (§2.6) yaşayan isim aday olmaz'; §2.6 Δ_i(t) = son 30 günde (tespit anı t'ye göre) en uzun aralık; olay: son gerçek kayıttan bu yana 1,5·Δ_i geçti ve bar akışı sürüyor. funding.py (satır 154-156) bunu tespit anındaki Δ ile uygular.",
+   "aciklama": "eksik_funding_olay_sayisi her kayıt a için delta_aralik_saat(f, a) kullanıyor (pencere [a-30g, a]). Tespit saati h > a olduğunda pencere [h-30g, h] olur; a'dan sonra kayıt olmadığından Δ_h ≤ Δ_a'dır ve eski bir uzun aralık pencereden düşünce Δ_h küçülür. Bu durumda funding.py (dolgu yazan motor) olayı h'de tespit eder, carry sayacı ise eşiği 1,5·Δ_a'da tutup bir sonraki kayıt o eşikten önce geldiği için olayı saymaz. Sonuç: gerçek (§2.6 tanımlı, dolgusu yazılmış) olay sayısı 2 iken carry 1 sayar ve isim §4.1'e aykırı olarak aday kalır. Docstring'deki 'tespit anındaki pencereden en fazla 1,5*8 saat farklı; sayım için yeterli' iddiası yanlıştır: fark 1,5·Δ_a kadar olabilir ve sayımı değiştirir. Düzeltme: her h saati için Δ'yı h'de hesaplamak (funding.py ile aynı kural).",
+   "kanit": "wf_carry_olay.py: 8h funding; 24h boşluk r1=a-720h'de (pencerenin tam kenarında), a=960h'den 32h boşluk, a+48h'den 56h boşluk; t=gün 46. Çıktı: 'carry.py sayim: 1' / 'funding.py kuraliyla (Ss2.6) olay sayisi: 2 olaylar (son kayit saati, tespit saati, Delta): [(960, 972, 8.0), (1008, 1056, 32.0)]'. İlk olay (a=960) funding.py'de h=972'de Δ=8 ile tespit edilir; carry Δ_a=24 → eşik a+36h > sonraki kayıt a+32h → sayılmaz. İsim olay>1 ile elenmeliydi, carry'de uygun kalır.",
+   "kaynak": "carry",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "carry.py:58 eksik_funding_olay_sayisi, Δ'yı gap başındaki a anında ([a-30g, a] penceresi) hesaplıyor. MIMARI §2.6'da Δ_i(t) değerlendirme anına göre tanımlı ve funding.py:154-155 da Δ'yı tespit saati h'de hesaplıyor. a ile h arasında kayıt olmadığından pencere yalnız eski kayıtları düşürür. Bu yüzden Δ_h ≤ Δ_a olur ve fark 1,5·(Δ_a − 8) kadar büyüyebilir. Docstring'deki \"en fazla 1,5*8 saat farklı; sayım için yeterli\" iddiası yanlış. Bu nokta Y1–Y11 arasında değil, yalnız docstring'de geçen bir yorum; üstelik §2.6 tanımıyla ve motorun kendi funding.py uygulamasıyla çelişiyor. Gerçek motor (funding_saati) aynı veride iki olay tespit edip dolgu yazıyor, carry ise yalnız bir olay sayıyor. Böylece §4.1'e göre elenmesi gereken isim (olay 2 > 1) aday kalıyor. Şiddet ORTA: kural ihlali yalnız nadir bir veri kalıbında ortaya çıkıyor (pencere kenarında eski uzun boşluk ve ardından ~1,5·Δ_a'dan kısa yeni bir boşluk), ama carry evren seçimini doğrudan değiştiriyor. Düzeltme: gap içindeki her h için Δ'yı h'de hesaplamak (funding.py ile aynı kural).",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_carry_0_0b.py (ve _0_0.py). İddiacının fikstürü kullanıldı: 8h funding; eski 24h boşluk a-720h'de; a'dan sonra 32h boşluk; a+48h'den sonra 56h boşluk. Isınmayı geçmek için veri 130 güne uzatıldı (a=2880h, t=gün 126). Referans olarak funding.funding_saati her saat q=1 ile doğrudan koşuldu ve dolgunun ilk yazıldığı saatler toplandı. Çıktı:\ncarry sayim: 1 max: 1\naday: AdayBilgisi(v30=120000000.0, v60=120000000.0, eksik_olay=1, uygun=True, sebep='')\nfunding_saati olay tespitleri (son kayit, tespit, delta, dolgu saat): [(2880, 2892, 8.0, 12), (2928, 2976, 32.0, 48)]\ndelta at a: 24.0\nMotor, a=2880 boşluğunu h=2892'de Δ=8 ile olay olarak tespit edip 12 saatlik dolgu yazıyor. carry.py ise Δ_a=24 ile eşiği a+36h'ye koyuyor; sonraki kayıt a+32h'de geldiği için bu olayı saymıyor. Gerçek olay sayısı 2 iken carry 1 sayıyor ve isim uygun=True kalıyor; §4.1 \"birden fazla eksik funding olayı yaşayan isim aday olmaz\" kuralı ihlal ediliyor."
+    },
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Hata gerçek. MIMARI §2.6'daki tanım şu: \"Δ_i(t): son 30 günde ardışık gerçek kayıtlar arasındaki en uzun aralık.\" ve \"Eksik olay: son gerçek kayıttan bu yana 1,5·Δ_i geçti ve coinin bar akışı sürüyor\". Buna göre Δ, değerlendirilen saatte (t) hesaplanmalı. funding.py de öyle yapıyor: funding_saati içinde delta_aralik_saat(f, t_ms, p) çağrılıyor. §4.1 ise \"Son 30 günde birden fazla eksik funding olayı (§2.6) yaşayan isim aday olmaz.\" diyor ve aynı tanıma bağlanıyor.\n\ncarry.py:58 (eksik_funding_olay_sayisi) ise Δ'yı son kayıt anında (a) bir kez hesaplıyor: delta_aralik_saat(f, a, p). Eşiği de a+ceil(1,5·Δ_a) saatte sabitliyor. Tespit saati h > a olduğunda pencere [h−30g, h] kayıyor. a'dan sonra yeni kayıt olmadığı için Δ_h ≤ Δ_a olur. Eski uzun bir aralık pencereden düşünce Δ_h küçülür ve §2.6'ya göre olay daha erken oluşur. carry ise bu olayı, bir sonraki kayıt eski eşikten önce geldiği için hiç saymıyor.\n\nDocstring'deki gerekçe yanlış: \"tespit anındaki pencereden en fazla 1,5*8 saat farklı; sayım için yeterli\". Eşik farkı 1,5·(Δ_a−Δ_h) kadar olabiliyor; örnekte (24−8)·1,5 = 24 saat. Bu fark sayımı değiştiriyor.\n\nY1–Y11 bu noktayı yorumlamıyor. Konu yalnız docstring'de geçiyor ve oradaki gerekçe sayısal olarak yanlış, yani yazarın kayıtlı bir belge yorumu değil.\n\nEtkisi: carry_eksik_olay_max=1 (tipler.py:122) olduğundan gerçekte 2 olay yaşamış bir isim 1 olay sayılıyor ve §4.1'e aykırı olarak aday kalıyor. Durum nadir: uzun bir aralığın boşluk sırasında pencereden düşmesini gerektiriyor. Ama kural açıkça ihlal ediliyor ve dolgu motoruyla (funding.py) aynı sonucu vermiyor.",
+     "kanit": "wf_carry_olay.py betiğini okudum ve çalıştırdım. Senaryo: 8 saatte bir funding kaydı; r1=a−720h'de 24 saatlik boşluk (30 günlük pencerenin tam kenarı); a=960h'den sonra 32 saatlik boşluk; a+48h'den sonra 56 saatlik boşluk; t = 46. gün.\n\nÇıktı:\ncarry.py sayim: 1\nfunding.py kuraliyla (Ss2.6) olay sayisi: 2 olaylar (son kayit saati, tespit saati, Delta): [(960, 972, 8.0), (1008, 1056, 32.0)]\n\nElle doğrulama:\n- carry.py için Δ(960) = 24, çünkü [240,960] penceresinde r1→r1+24 aralığı var. Eşik 960+36 = 996. Sonraki kayıt 992'de geldiği için olay sayılmıyor.\n- §2.6'ya göre h=961'de pencere [241,961] olur ve r1=240 pencereden düşer, yani Δ=8. Bar akışı sürerken olay h=972'de (960+12) oluşur.\n- İkinci olay: Δ=32 (960→992 aralığı), eşik 1008+48 = 1056, sonraki kayıt 1064'te. Bu olayı iki taraf da sayıyor.\n\nSonuç: gerçek sayı 2 > carry_eksik_olay_max=1 olduğu için isim elenmeliydi, ama carry 1 sayıyor ve isim uygun kalıyor.\n\nKodda carry.py:58'de `delta = delta_aralik_saat(f, a, p)` var (Δ gap başında hesaplanıyor), funding.py'de ise `delta = delta_aralik_saat(f, t_ms, p)` (Δ tespit anında hesaplanıyor)."
+    }
+   ]
+  },
+  {
+   "siddet": "OLDURUCU",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 235,
+   "baslik": "Çözücü ile yeniden sınama farklı tolerans kullanıyor: S1/S2 bağladığı her gün B koşusu teknik hatayla duruyor",
+   "kural": "MIMARI §4.5 adım 3 (c1, c2 koşulu sağlayan en büyük değer) ve adım 6 / T4-d (çözücü çıktısı tavanları sağlamalı; tavan ihlali teknik hata)",
+   "aciklama": "net_cozucu.py:116-145 S1/S2 koşulunu mutlak toleransla (kayıp <= sınır + 1e-12) sınıyor. İkiye bölme (60 adım) bu yüzden kaybı tam 0.2+1e-12 sınırına oturtuyor. hedef_b.py:235-238 ise aynı kaybı göreli toleransla sınıyor (> 0.2*(1+1e-12) = 0.2+2e-13). Bu yüzden S1 ya da S2'nin bağladığı her günde çözücünün kendi çıktısı ihlal sayılıyor. Adım 6'daki bant kapatma trendi w^T*'a döndürdüğü için ihlal kalıyor; sabit isim yoksa hedef_b.py:280 HedefHatasi fırlatıyor. Bant, isimleri hedefin altında tuttuğunda hata ancak tesadüfen görünmüyor. Brüt ve isim denetimlerinde bu uyumsuzluk yok (sınır 2,0 ve mutlak tolerans).",
+   "kanit": "wf_cozucu_2.py: net_coz, 12 alt short -0.04 → S2 = 0.200000000001; hedef_b eşiği 0.20000000000020002 → ihlal=True. Rastgele 2000 kitabın 2000'inde de çözücü çıktısı hedef_b denetiminden geçmedi. Uçtan uca (wf_cozucu_4/5.py): carry_senaryo_verisi, kos(L=4.0, mimari='B') → 'HedefHatasi T4-d: net kitap tavan ihlali (teknik hata): ['S1']'; hedef_b ihlaller() içindeki S1 değerleri '0.200000000001' (eşik 0.20000000000020002). L=6 ile de aynı sonuç.",
+   "kaynak": "cozucu",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "İddia doğrulandı. net_cozucu.py S1/S2 koşulunu mutlak toleransla sınıyor: tol=1e-12, koşul kayıp <= sınır+tol. 60 adımlık ikiye bölme kaybı bu sınıra, yani 0,2+~1e-12'ye oturtuyor. hedef_b.py:235-238'deki ihlaller() ise göreli tolerans kullanıyor: > 0,2*(1+1e-12) = 0,2+2e-13. Bu yüzden S1/S2'nin bağladığı her günde çözücünün kendi çıktısı ihlal sayılıyor. Bu bir Y1–Y11 yorumu değil, iç tutarsızlık. MIMARI §4.5 adım 3'e göre katsayı koşulu sağlayan en büyük değerdir ve T4-d'ye göre tavan ihlali teknik hatadır. Burada iki denetimin toleransı uyuşmadığı için geçerli bir kitap hatalı sayılıyor. Adım 6 trendi w_T*'a geri döndürüyor ve ihlal kalıyor. Sabit isim yoksa hedef_b.py:280 HedefHatasi fırlatıp B koşusunu durduruyor. Sabit isim varsa hata fırlatmıyor, yanlış 'sabit_tavan_ihlali' tanısı yazıyor. Şiddeti OLDURUCU yerine CIDDI verdim. Sonuç sessizce bozulmuyor, koşu yüksek sesle duruyor; düşük L'de de hata görünmüyor (L=1 koşusu tamamlandı). Yine de L=4'te fikstür koşusu duruyor.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_cozucu_0_0.py. İlk çıktı satırı tek deneme kitabıdır; S1/S2 bağlamadığı için ihlal yok ve kanıt değildir. Rastgele 300 kitabın 55'inde çözücüde S1/S2 bağladı; bu 55 kitabın 55'i de hedef_b ihlaller() eşiğini (0,20000000000020002) aştı. Çıktı:\nS1/S2 baglayan 55 hedef_b ihlal 55\n1.0 kosu tamam\n4.0 HedefHatasi T4-d: net kitap tavan ihlali (teknik hata): ['S1']\n(carry_senaryo_verisi, kos, mimari='B', t0=gun 92)"
+    },
+    {
+     "gercek": true,
+     "siddet": "OLDURUCU",
+     "gerekce": "Hatayı kendim yeniden ürettim, iddia doğru. net_cozucu.py:74'te tol = 1e-12 tanımlı. S1/S2 koşulu 116-128. satırlarda mutlak toleransla sınanıyor: kayıp <= 0.2 + 1e-12. _ikiye_bol (46-55) 60 adım boyunca koşulu sağlayan en büyük c'yi (lo) döndürüyor. Bu yüzden çözücü çıktısındaki kayıp tam 0.2+1e-12 sınırına oturuyor (0.200000000001). hedef_b.py:233-238'deki ihlaller() ise aynı kaybı göreli toleransla sınıyor: > 0.2*(1+1e-12), yani 0.2+2e-13. Sonuç olarak çözücünün kendi uygun saydığı çıktı ihlal sayılıyor. Adım 6 döngüsü yalnız bandı kapatıyor (wT_b=wT_star). Trend w^T* olduğunda çözücü zaten uygulanmış olduğundan kayıp düşmüyor. Sabit isim yoksa hedef_b.py:280 HedefHatasi fırlatıyor. MIMARI §3.5 T4-d satırı (403) şöyle der: \"Kaldıraçlı net hedef kitap (HedefKitap; çözücü ve bant sonrası) ... İsim, brüt, S1, S2 ... tavanları ... Tavanlar: teknik hata\". Tavan ihlalinin teknik hata sayılması belgeye uygun. Ancak §4.5 adım 3'e göre çözücü tavanı sağlayan c'yi bulmalıdır. Kod ise sayısal tolerans uyumsuzluğu yüzünden, tavanı pratikte sağlayan kendi çıktısını ihlal sayıyor. Bu bir yorum farkı değil, iki modül arasında kendi içinde bir tutarsızlık. Y1–Y11'de tolerans hakkında bir yorum yok. Sonuç: S1 ya da S2'nin bağladığı, sabit isim olmayan her günde B koşusu duruyor. Uçtan uca fikstür koşusu (L=4 ve L=6) bu hatayla kesiliyor.",
+     "kanit": "wf_dogrula_cozucu_0_1.py (13 isim, 12 alt coin, 1 BTC; carry yok, sabit yok; S1/S2 sınırı 0.2, 60 adım):\n-0.04 ('isim','S2') S2=0.200000000001 hedef_b ihlal: True\n-0.03 () 0.19500000000000003 ihlal: False\n-0.05 ('isim','S2') 0.200000000001 ihlal: True\n0.05 ('S1',) S1=0.20000000000100002 ihlal: True\n0.04 ('S1',) S1=0.20000000000100002 ihlal: True\nUçtan uca (wf_cozucu_4.py, carry_senaryo_verisi, mimari='B'):\n4.0 HedefHatasi T4-d: net kitap tavan ihlali (teknik hata): ['S1']\n6.0 HedefHatasi T4-d: net kitap tavan ihlali (teknik hata): ['S1']\nKod: net_cozucu.py:121 `s1(...) <= p.s1_sinir + tol` (tol=1e-12, mutlak), hedef_b.py:235 `_kayip_s1(w,...) > p.s1_sinir * (1 + 1e-12)` (göreli), 237 S2 için aynı, 280 raise HedefHatasi."
+    }
+   ]
+  },
+  {
+   "siddet": "CIDDI",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 248,
+   "baslik": "Adım 6 bant kapatma 'ihlal eden tarafı' trend işaretinden belirliyor, net işaretinden değil",
+   "kaynak": "cozucu",
+   "kural": "MIMARI §4.5 adım 6: tavan ihlali varsa ihlal eden tarafın trend isimlerinde bant kapatılır (§3.6: ihlal eden tarafın bütün isimleri)",
+   "aciklama": "Net kitapta bir isim, trendi long olduğu halde carry short'u yüzünden net short olabilir; bant trendi hedefin altında tutunca isim net short tarafa geçer. S2 ihlali doğrudan bu isimden gelir. Kod yalnız trend bileşeni negatif olan isimlerde ('kisa' = wT*<0 veya wT_b<0) bandı kapatıyor. İhlali yaratan long-trendli isim açık kalıyor, 3 tur boyunca ihlal sürüyor ve sabit isim yoksa hedef_b.py:280 teknik hata veriyor. S1 için de simetrik durum geçerli: trend short, carry long, net long.",
+   "kanit": "wf_cozucu_1.py: A için trend +0.012 ve carry -0.01, 12 trend short -0.04, S2 bağlıyor (c2=0.923). Önceki sanal trend 0.0097 bant içinde olduğundan wT_b=0.0097, net A=-0.0003. hedef_b.py:243-252 döngüsü birebir uygulandıktan sonra S2=0.20015 ve kalan ihlal {'S2'} → HedefHatasi.",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "İddia doğru. Kodu ve belgeyi kendim okudum. MIMARI §4.5 adım 6 şunu söylüyor: \"tavan ihlali varsa ihlal eden tarafın trend isimlerinde bant kapatılır (§3.6 ile aynı kural)\". §3.6'ya göre de \"ihlal eden tarafın bütün isimlerinde band kapatılır\". Burada taraf, yeniden sınanan NET kitabın tarafıdır. _kayip_s2 (tavanlar.py:45-54) yalnız net w<0 olan isimleri sayar ve long isimlerle mahsup yapmaz.\n\nhedef_b.py:248-250 ise tarafı trend bileşeninin işaretinden kuruyor (kisa = wT_star<0 or wT_b<0). Trendi long, carry short'u yüzünden neti short olan bir isim, bandın trendi aşağıda tutmasıyla S2'ye doğrudan katkı yapar, ama bu ismin bandı kapatılmaz. Ters yönlü (trendi short olan) isimlerin bandını kapatmak S2'yi düşürmez, çünkü onlar zaten w^T*'dadır. Üç tur boyunca ihlal sürer. Sabit isim yoksa hedef_b.py:280 HedefHatasi verir ve koşu durur. Sabit isim varsa ihlal yanlışlıkla 'sabit_tavan_ihlali' olay kaydına yazılır ve tavanı aşan kitap icraya gider. S1 için de aynı durum simetrik olarak geçerli: trend short, carry long, net long.\n\nBu nokta Y1–Y11 yorumlarında geçmiyor. Belgeye açıkça aykırı.\n\nEk not: İddiacının asıl örneğinde çözücünün kendi çıktısı da S2=0.200000000001 veriyor. Bu değer, 1e-12 göreli toleranslı kontrolü zaten aşıyor; yani o örnek bandı hesaba katmadan da hata veriyordu. Bu ayrı bir tolerans uyumsuzluğu olabilir. Bu yüzden iddiayı, çözücü çıktısının bağlamadığı, bandın tek neden olduğu temiz bir karşı örnekle yeniden doğruladım.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_cozucu_1_0.py. Gerçek fonksiyonlar kullanıldı: net_coz, bant_uygula, _kayip_s2. hedef_b.py:243-252 döngüsü birebir kopyalandı. Kurulum: 15 isim. A'nın trendi +0.012, carry'si -0.01. B'nin carry'si +0.01. 12 ismin trendi -0.030755. BTC var. Hiçbir tavan bağlamıyor. A'nın önceki sanal trendi 0.0097; bant [0.0096, 0.0144] olduğundan bu değer bant içinde.\nÇıktı:\nbaglayan () c2 1.0 kappa 1.0 S2 0.1999075\nA: wT* 0.012 net 0.002\nkod davranisi: wT_b[A] 0.0097 netA -0.0003 S2 0.2000575 kalan {'S2'}\nnet-isaret kurali (A bandi kapali): netA 0.002 S2 0.1999075 kalan set()\nYani çözücü çıktısı S2 sınırının altında. Yalnız bandın A'yı net short'a çevirmesi S2'yi ihlal ettiriyor. Kodun trend işaretine dayalı kuralı A'nın bandını kapatmıyor ve ihlal sürüyor. Sabit isim olmadığında hedef_b.py:280 HedefHatasi veriyor. Belgedeki net taraf kuralı (A'nın bandı kapalı) ihlali gideriyor."
+    },
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "MIMARI §4.5 adım 6 şöyle der: \"Kitap bütün tavanlarla ve toplam risk kuralıyla (T4-d) yeniden sınanır; tavan ihlali varsa ihlal eden tarafın trend isimlerinde bant kapatılır (§3.6 ile aynı kural)\". §3.6 da \"İhlal varsa ihlal eden tarafın bütün isimlerinde band kapatılır ve o isimler w*'ye gider\" der. S2, net kitabın short tarafı üzerinden tanımlıdır (tavanlar.py:45-54, w<0). Net short tarafa geçen bir isim, trend bileşeni long olsa bile S2 ihlalini doğrudan üretir.\n\nhedef_b.py:248-251 'taraf'ı yalnız trend işaretiyle belirliyor: kisa = wT_star<0 or wT_b<0. Trendi long, carry'si short olan ve bant yüzünden net short'a geçen isim bu yüzden kapatılmıyor. İhlal üç turda da sürüyor ve sabit isim yoksa hedef_b.py:280 HedefHatasi atıyor. §4.5 adım 3'te c₂'nin 'negatif trend bileşenleri'ne uygulanması trend-işareti okumasına bir dayanak sağlıyor. Yine de adım 6'nın amacı bant sonrası kitabı tavanlara geri döndürmek. Kodun seçtiği okuma bu kuralı geçerli bir girdide işlemez kılıyor ve teknik hataya götürüyor. Y1–Y11 arasında adım 6'yı yorumlayan bir madde yok; Y11 yalnız adım 3'teki κ ikiye bölmesini kapsıyor.\n\nSenaryonun gerçekleşmesi için tek koşul var: S2 bağlasın ve carry'li bir isim bant içinde kalsın. Kaldıraç yükseldiğinde S2 sık bağlıyor (§7 madde 3), carry bileşeni de isimleri net olarak karşı tarafa çevirebiliyor. Bu yüzden senaryo gerçekçi. S1 için simetrik durum da aynı yoldan geçerli: trend short, carry long, net long.",
+     "kanit": "wf_cozucu_1.py'yi okudum ve çalıştırdım. Betik gerçek net_coz, bant_uygula, _kayip_s2 ve net_isim_tavanlari işlevlerini kullanıyor; hedef_b.py:243-252 döngüsü betiğe birebir kopyalanmış. Çıktı:\nbaglayan ('isim', 'S2') c2 0.9230769230815385 kappa 1.0 S2 0.200000000001\nA: wT* 0.012 net 0.002\nA bant sonrasi wT_b 0.0097 net A -0.0003 S2 0.20015000000099997 kalan ihlal {'S2'} -> hedef_b.py:280 HedefHatasi (sabit yok)\n\nA'nın trend hedefi 0.012, bandı [0.0096, 0.0144], önceki sanal trendi 0.0097. Bant trend bileşenini 0.0097'de tutuyor ve A net short'a (−0.0003) geçiyor. S2 yaklaşık 0.20015'e çıkıyor, sınır 0.20. Kodda kisa = (wT_star<0 or wT_b<0) koşulu A için False olduğundan A'nın bandı kapanmıyor. Döngü üç turda da S2 ihlalini gideremiyor ve kalan_ih={'S2'} ile hedef_b.py:280 'T4-d: net kitap tavan ihlali (teknik hata)' atıyor. Net işarete göre (w<0) seçilseydi A kapanır, 0.012'ye döner (net +0.002) ve S2 tekrar 0.20'ye iner."
+    }
+   ]
+  },
+  {
+   "siddet": "CIDDI",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 214,
+   "baslik": "K13 kırpması çözücüden sonra trend bileşenine uygulanıyor; net kitabı büyütebiliyor ve düzeltilemeyen teknik hataya yol açıyor",
+   "kural": "MIMARI §4.5 adım 6 (nihai kitap tavanları sağlar; tavan ihlali teknik hata), §3.5 'her adım yalnız küçültür'; Y10",
+   "aciklama": "Y10'a göre K13 (V60<20M) trend bileşenine uygulanıyor. Ancak bu kırpma net_coz'dan sonra ve yeniden çözme yapılmadan uygulanıyor. Trend long ile carry short içeren bir isimde trendi küçültmek neti daha negatif yapar, S2'yi ve brütü büyütür. Adım 6'daki bant kapatma wT_b'yi zaten K13 uygulanmış wT_star'a döndürdüğünden ihlal giderilemiyor ve sabit isim yoksa HedefHatasi oluşuyor. A'da (hedef.py:240-247) K13 net ağırlığa uygulandığı için yalnız küçültüyor ve bu sorun yok. Y10 yorumunun yerleşimi kendi içinde tutarsız.",
+   "kanit": "wf_cozucu_8.py: çözücü sonrası S2=0.200000000001; A için wT*=0.012, carry -0.01. K13 önceki sanal trend e=0.002 → wT*=0.002, net A=-0.008 → S2=0.204 > 0.20. Bant kapatma bunu değiştirmiyor → hedef_b.py:280 HedefHatasi.",
+   "kaynak": "cozucu",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "İddia doğru çıktı. hedef_b.py:214-217'de K13 kırpması net_coz'dan (satır 200) sonra, yeniden çözme yapılmadan wT_star'a uygulanıyor. Aynı isimde trend long ile carry short varsa trend bileşenini küçültmek net ağırlığı daha negatif yapıyor. Bu yüzden S2 kaybı, brüt ve isim tavanına yakınlık büyüyebiliyor. Bu durum MIMARI §3.5'teki \"her adım yalnız küçültür\" kuralıyla çelişiyor. §4.5 adım 6'nın nihai kitabın tavanları sağlaması güvencesini de bozuyor.\n\nAdım 6'daki bant kapatma (satır 251) wT_b'yi K13 zaten uygulanmış wT_star'a geri döndürüyor. Bu yüzden ihlal giderilemiyor. Sabit isim yoksa satır 280 HedefHatasi fırlatıyor; MIMARI §4.3 T4-d satırına göre bu bir teknik hata. Oysa girdi geçerli bir piyasa durumu: ay içinde V60 değeri 20M altına düşmüş ama hâlâ evrende olan bir coin, aynı anda V30 ≥ 10M olduğu için tutulan carry short.\n\nA'da (hedef.py:240-247) K13 net ağırlığa ve tavan çözümünden sonra uygulanıyor. |w| ≤ |w0| olduğu için yalnız küçültüyor ve tavan ihlali doğuramıyor.\n\nY10 yalnız K13'ün trend bileşenine uygulanacağını söylüyor. Yeniden sınamanın bu kırpmayı geri alamayacağını ve sonucun teknik hata olacağını ele almıyor. Bu yüzden sorun yorumun kendisi değil, uygulamanın §4.5 adım 6 ve §4.3 T4-d güvencesiyle çelişmesi.\n\nŞiddeti CIDDI yerine ORTA verdim. Gerekçe: S2'nin tam bağlayıcı olmasını ve aynı isimde ters işaretli trend ve carry bacaklarını birlikte gerektiriyor. Ancak gerçekleştiğinde koşuyu teknik hatayla durduruyor.",
+     "kanit": "wf_dogrula_cozucu_2_0.py gerçek motor parçalarıyla çalıştırıldı: net_coz, net_isim_tavanlari, bant_uygula ve adım 6'nın ihlaller/bant kapatma döngüsünün satır 229-252'den birebir kopyası. Kurulum: 15 isim, isim 0 için wT=+0.012 ve wC=-0.01, isim 1 için wC=+0.01, 12 isim için wT=-0.04, bir BTC. İsim 0'ın önceki sanal trend değeri e=+0.002; diğer isimlerde bant etkisiz.\nÇıktı:\nkappa 1.0 c_trend [1. 1. 0.76923077] glob 1.0\ncozucu net S2 0.200000000001 sinir 0.2\nadim6 sonrasi ihlaller {'S2'} S2 0.20400000000099996 A net -0.008\nİsim 0'ın neti, K13'ten önce +0.002 iken sonra -0.008 oluyor. Adım 6'dan sonra S2 = 0.204 > 0.20 kalıyor ve sabit isim yok. Bu durumda hedef_b.py:279-280 şu hatayı fırlatır: HedefHatasi(\"T4-d: net kitap tavan ihlali (teknik hata): ['S2']\")."
+    },
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "Kodu ve belgeyi kendim okudum. hedef_b.py:211-217'de K13 kırpması net_coz'dan (satır 200) SONRA trend bileşenine uygulanıyor (Y10'a uygun) ve ardından yeniden çözme yapılmıyor. MIMARI §3.5'te \"Uygulama sırası: isim tavanları → brüt → şok senaryoları. Her adım yalnız küçültür.\" yazıyor. §4.5 adım 6'da ise \"Kitap bütün tavanlarla ve toplam risk kuralıyla (T4-d) yeniden sınanır; tavan ihlali varsa ihlal eden tarafın trend isimlerinde bant kapatılır\" deniyor. T4-d tablosundaki kural da \"Tavanlar: teknik hata\" (K8 istisnası yalnız sabit isimler için geçerli).\n\nBir isimde trend long, carry short olduğunu düşünelim. Trendi K13 ile küçültmek net ağırlığı daha negatif yapar: |net| ve S2 kaybı ile brüt artar. Böylece net kitapta \"yalnız küçültür\" kuralını bozan bir adım oluşur. Adım 6'daki bant kapatma kodu (satır 243-252) wT_b'yi zaten K13 uygulanmış wT_star'a döndürüyor. S2 ihlalinde de yalnız kısa trend isimlerine dokunuyor. Bu yüzden ihlal giderilemiyor. T4-d ölçeklemesi yalnız V aşımında çalışıyor. Sabit isim yoksa satır 279-280'de HedefHatasi fırlatılıyor.\n\nA'da (hedef.py:240-247) K13 net ağırlığa uygulanıyor ve yalnız küçültüyor; orada bu sorun yok. Y10 yalnız K13'ün \"trend bileşenine\" uygulanacağını söylüyor. Bunu çözücüden sonra ve yeniden sınama/çözme olmadan yerleştirmek, §4.5 adım 6'nın nihai kitabın tavanları sağlaması güvencesiyle ve §3.5'teki tekdüze küçültme ilkesiyle çelişiyor. Yorum kendi içinde tutarsız sonuç üretiyor. Bu, koşuyu piyasa verisi yüzünden durduran bir teknik hata.\n\nSenaryo gerçekçi. Evren aylık güncelleniyor, bu yüzden ay içinde V60'ı 20M'nin altına düşen evren üyesi mümkün. Carry tutulan isim V30 ≥ 10M ile kalabiliyor, dolayısıyla V60 < 20M carry short olabilir. Önceki sanal trend 0 olan yeni bir long sinyal K13 ile 0'a indiriliyor. S2'nin bağladığı (düşüş trendli) günlerde bu koşullar oluşabilir.",
+     "kanit": "wf_dogrula_cozucu_2_1.py betiği net_coz → K13 (hedef_b.py:217'deki formül) → bant_uygula → adım 6 döngüsünü (satır 243-252, birebir kopya) çalıştırdı. Kurulum: 15 coin; A için wT=0.012, carry -0.01; B'de carry +0.01; 12 altta trend -0.04; BTC/ETH yok; sabit isim yok; A'nın önceki sanal trendi 0.002.\nÇıktı:\nc_trend [1. 1. 0.76923077] kappa 1.0 cozucu S2 0.200000000001\nadim6 sonrasi ihlal {'S2'} S2 0.20400000000099996 A net -0.008\nSabit isim olmadığından hedef_b.py:279-280 `raise HedefHatasi(\"T4-d: net kitap tavan ihlali (teknik hata): ['S2']\")` çalışır. Belge metinleri: §3.5 \"Her adım yalnız küçültür.\"; §4.5 adım 6 \"Kitap bütün tavanlarla ve toplam risk kuralıyla (T4-d) yeniden sınanır; tavan ihlali varsa ihlal eden tarafın trend isimlerinde bant kapatılır\"; T4-d \"Tavanlar: teknik hata\". İlgili dosyalar: AKTIF_MODEL/v8/motor/hedef_b.py:211-217, 241-252, 277-280; AKTIF_MODEL/v8/motor/hedef.py:240-247 (A'da net ağırlıkta yalnız küçültme)."
+    }
+   ]
+  },
+  {
+   "siddet": "ORTA",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 287,
+   "baslik": "Reduce-only T4-d'den sonra uygulanıyor: nihai HedefKitap V(w*) <= L(1+ω_C)τ kuralını denetimsiz aşabiliyor (A ile parite yok)",
+   "kural": "MIMARI §3.5 T4-d tablosu (nesne: kaldıraçlı net hedef kitap / HedefKitap; toplam risk kuralı, ihlalde ölçekleme ve olay kaydı), §2.6 reduce-only",
+   "aciklama": "B'de reduce-only (hedef_b.py:287-292) T4-d ölçeklemesinden (254-276) ve tavan denetiminden sonra w_yildiz'e uygulanıyor. İsim isim küçültme V normunu artırabilir: yeni kurulan BTC hedge'i ya da trend short'u eski ağırlık 0 olduğu için 0'a iniyor, long bacak kalıyor. HedefKitap.w_yildiz T4-d'yi aşıyor ama ne ölçekleme ne olay kaydı yapılıyor; tanilar['v_net'] de reduce-only öncesi değeri gösteriyor. A'da (hedef.py:240-265) reduce-only T4-d'den önce uygulandığı için değişmez nihai nesnede korunuyor.",
+   "kanit": "wf_cozucu_7.py: 4 alt, alt-BTC R_EW 0.9, R̂ = 0.5 R_EW + 0.5 R_S. Hedef (0.05×4 alt, BTC -0.20) için V=0.1562 <= lim=0.18 (L=1). w0'da BTC=0 olduğundan reduce-only BTC'yi 0 yapıyor: V=0.1844 > 0.18. Ne denetim ne olay kaydı var.",
+   "kaynak": "cozucu",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Kod iddiayı doğruluyor. hedef_b.py:254-284 aralığında T4-d toplam risk denetimi yapılıyor (V(w) ≤ L(1+ω_C)τ, gerekirse ölçekleme ve tavan denetimi), tanilar['v_net']=v1 atanıyor. Reduce-only (§2.6) bundan sonra, 287-292. satırlarda w'ya isim isim uygulanıyor ve sonuç yeniden sınanmadan HedefKitap.w_yildiz olarak dönüyor. MIMARI §3.5 tablosuna göre T4-d'nin nesnesi \"Kaldıraçlı net hedef kitap (HedefKitap; çözücü ve bant sonrası)\". İhlalde güvenlik ölçeklemesi ve olay kaydı isteniyor, sonrasındaki ihlal teknik hata sayılıyor. §4.5 adım 6 ve sıra özeti de nihai kitabın T4-d ile yeniden sınanmasını istiyor. V normu korelasyonlu bir norm olduğu için isimleri tek tek küçültmek normu büyütebilir. Yeni kurulan ya da işaret değiştiren hedge (BTC veya alt short) eski ağırlık 0 ya da ters işaretli olduğundan 0'a iniyor, long bacaklar ise kalıyor. Böylece nihai nesne kuralı aşıyor, ama ne ölçekleme ne olay kaydı ne teknik hata oluşuyor. v_net tanısı da yanlış (reduce-only öncesi) değeri gösteriyor. A'da (hedef.py:240-265) reduce-only T4-d'den önce uygulanıyor. c≤1 ile ölçekleme reduce-only kısıtını bozmadığı için A iki kuralı birlikte sağlıyor, dolayısıyla B ile A arasında parite yok. Y10 yalnız reduce-only'nin B'de net kitaba uygulandığını söylüyor, sıralama ya da T4-d ile ilişki hakkında bir yorum yapmıyor. Bu nedenle belge boşluğu yorumu savunması geçerli değil. İddiacının örneğinde eski kitap (w0) da kuralı aşıyordu (V=0.184), bu yüzden örnek zayıftı. Ben daha güçlü bir örnek kurdum: eski kitap da hedef de kuralın içinde, reduce-only sonrası nihai kitap kuralı aşıyor. Etki yalnız borsa çapı boşluk sonrasındaki reduce-only günlerinde görülüyor ve aşım sınırlı. Sonuç orta şiddette bir doğruluk hatası. Eksik kalan: hedef_b tam çağrılarak uçtan uca koşulmadı. Betik 287-292. satırların mantığını birebir kopyalıyor ve gerçek v_norm'u kullanıyor.",
+     "kanit": "<ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_cozucu_3_0.py: 6 isim (alt1-4, alt5, BTC σ=0.6), R̂=0.5·R_EW(0.9)+0.5·R_S(0.7), L=1, lim=L(1+ω_C)τ.\nw0=[.05,.05,.05,.05,0,-.20] (eski kitap, BTC hedge'li); hedef=[.05,.05,.05,.05,-.10,0] (BTC hedge kalktı, alt5 yeni short). Reduce-only mantığı hedef_b.py:287-292 ile birebir aynı.\nÇıktı:\nlim 0.18 V(w0) 0.1562049935181331 V(hedef) 0.14142135623730953\nreduce-only sonrasi [0.05 0.05 0.05 0.05 0.   0.  ] V 0.18439088914585774 ihlal True\nHem eski kitap hem hedef T4-d içinde (hedef_b 264. satırda ölçekleme tetiklenmiyor), nihai w_yildiz V=0.184>0.18 ile kuralı aşıyor. Sonrasında denetim yok (287-292 → 324 HedefKitap), baglayan'da T4d yok, tanilar['v_net']=0.141. A'da hedef.py:241-248 reduce-only → 250-264 T4-d sırası var."
+    },
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Kodu ve belgeyi kendim okudum; iddia doğru.\n\n1. Belge ne diyor. MIMARI §3.5 tablosunun T4-d satırı birebir şöyle: \"T4-d | Kaldıraçlı net hedef kitap (HedefKitap; çözücü ve bant sonrası) | §3.5 / §4.5 sonu | İsim, brüt, S1, S2 (B'de S4) tavanları; **toplam risk kuralı** V(w*) ≤ L·(1 + ω_C·𝟙_B)·τ | ... Toplam risk: güvenlik ölçeklemesi + olay kaydı; sonrası ihlal teknik hata\". Tablonun başlığında da \"Her değişmez tek bir nesnede ve tek bir aşamada denetlenir\" yazıyor. §2.6 ise reduce-only kararı \"|w_yeni,i| ≤ |w_eski,i| ve işaret korunur ya da 0\" diye tanımlıyor. Denetlenen nesne yayımlanan HedefKitap'ın kendisi.\n\n2. Kod ne yapıyor. hedef_b.py:254-284 aralığında T4-d ölçeklemesi, tavan denetimi (`ihlaller`) ve `tanilar['v_net']=v1` ataması yapılıyor. Ardından 287-292. satırlarda reduce-only, `w` üzerinde isim isim uygulanıyor ve sonuç 322. satırda doğrudan `HedefKitap.w_yildiz` oluyor. Reduce-only'den sonra ne V denetimi var, ne ölçekleme, ne de olay kaydı. karar.py da B kitabını yeniden sınamıyor: 118-120. satırlarda `hedef.carry is not None` ise `bantli = hedef.w_yildiz` alınıyor ve `_ihlaller` yalnız A dalında çalışıyor. Böylece T4-d ihlali lot niyetine kadar sessizce iniyor.\n\n3. V neden artabiliyor. V bir norm ama isim isim sıfırlamaya göre monoton değil. BTC hedge'i ya da bir short bacak sıfırlandığında long bacak tek başına kalıyor ve V büyüyebiliyor.\n\n4. A ile parite. hedef.py:240-265 aralığında A önce reduce-only'yi uyguluyor, sonra T4-d'yi. T4-d serbest isimleri c ≤ 1 ile ölçeklediği için reduce-only kısıtı korunuyor, yani iki kural birlikte sağlanabiliyor. B bu sırayı tersine çeviriyor.\n\n5. Y10 bunu kapsamıyor. Y10 yalnız \"B'de reduce-only (§2.6) net kitaba uygulanır\" diyor; T4-d'den sonra ve denetimsiz uygulanacağını söylemiyor. Nihai HedefKitap'ın T4-d'yi aşması §3.5'e açıkça aykırı. Ayrıca `tanilar['v_net']` reduce-only öncesi değeri gösterdiği için tanı kaydı da yanıltıcı.\n\nŞiddet ORTA. Durum yalnız borsa çapı boşluk sonrasındaki kararlarda (reduce-only rejimi) ve hedge ya da short bacak w0'da yokken ortaya çıkıyor, yani seyrek. Ama çıktığında bir değişmez olay kaydı olmadan ihlal ediliyor.",
+     "kanit": "Kod: hedef_b.py:254-284 aralığında T4-d yapılıyor, 284. satırda `tanilar['v_net'] = v1` atanıyor. Ardından 286-292:\n    # Reduce-only (Ss2.6) net kitaba.\n    if reduce_only:\n        for i, c in enumerate(coinler):\n            ...\n            w[i] = 0.0 if (eski == 0.0 or w[i] * eski <= 0) else math.copysign(min(abs(w[i]), abs(eski)), eski)\nBundan sonra hiçbir denetim yok. 322. satırda `w_yildiz={c: float(w[i]) ...}` ile doğrudan yayımlanıyor. karar.py:118-120'de B dalı `bantli = {c: hedef.w_yildiz[c] ...}` alıyor, yani yeniden sınama yapılmıyor. A tarafında hedef.py:240-247 reduce-only'yi, 249-265 ise T4-d'yi uyguluyor (sıra A'da doğru).\n\nKarşı örnek: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_cozucu_3_1.py (hedef_b.py:287-292 mantığının birebir kopyası, v_norm motor.hedef'ten alındı). Senaryo: 4 alt + BTC, R̂ = 0.5·R_EW(0.9) + 0.5·R_S(0.7), L=1. Hedef w = (0.05 ×4, BTC −0.20); dünkü w0'da BTC = 0. Çıktı:\nlim 0.18 V(hedef) 0.1562049935181331 -> T4-d gecer, olcekleme yok\nreduce-only sonrasi w_yildiz [0.05 0.05 0.05 0.05 0.  ] V 0.18439088914585774 > lim; denetim/olay yok\nSonuç: reduce-only sonrası nihai HedefKitap'ta V = 0.1844 > L(1+ω_C)τ = 0.18. baglayan listesinde 'T4d' yok, ölçekleme ve olay kaydı yok, tanilar['v_net'] = 0.1562 gösteriyor."
+    }
+   ]
+  },
+  {
+   "siddet": "CIDDI",
+   "dosya": "AKTIF_MODEL/v8/motor/ayristirma.py",
+   "satir": 215,
+   "baslik": "Bantta tutulan sanal trend bacağı float gidiş-dönüşüyle 1 ulp büyüyor; V60 < 20M coinde ayrıştırma MaliyetGirdiHatasi ile çöküyor",
+   "kural": "MIMARI §4.5 adım 5 (bant önceki sanal trend miktarının fiyat_ref ile değerine göre), §4.7 bacak maliyeti yalnız |Δq^v| için; §6.1 <20M dilimi yalnız çıkışta tanımlı; K13/Y10 (V60 < 20M'de trend bileşeni önceki sanal trend değerini aşamaz)",
+   "aciklama": "hedef_b.py:211 önceki sanal miktarı ağırlığa çeviriyor (vT0 = s·fr/nav). Bant tutunca, ya da K13 wT* değerini e = vT0'a kırpınca, wT_b tam olarak vT0 oluyor. hedef_b.py:302 bunu miktara geri çeviriyor (vT0·nav/fr). Bu gidiş-dönüş, kayan noktada miktarı her zaman aynı bırakmıyor: rastgele girdilerin %18'inde değer farklı çıkıyor, %9'unda |q1| > |q0| oluyor. Böylece 'tutulan' bacakta Δq ≠ 0 doğuyor. karar.py bu coin için sanal_baglam yazıyor, ayristirma.py:201-217 de bacak maliyetini hesaplıyor. _azaltan(q0,dq) False döndüğü için cikis_mi=False gidiyor. K13 coininde (V60 < 20M) dilim_bps bu durumda MaliyetGirdiHatasi fırlatıyor ve bütün ayrıştırma duruyor. CARRY §5.1'e göre kapı yalnız bu fonksiyonun çıktısını okuyor, dolayısıyla kapı koşusu da duruyor. K13 durumunda tutulan her trend isminde bu olasılık her gün yaklaşık %9. V60 ≥ 20M coinlerde sonuç yalnız 1 ulp'lik anlamsız bir maliyet kaydı olur. Asıl hata K13 yolundaki çöküş.",
+   "kanit": "wf_ayristirma_1.py: 'roundtrip farkli: 18112 /100000; |q1|>|q0|: 9066'. q0 1234.6108901 -> q1 1234.6108901000002; V60=12M bağlamıyla ayristir: 'HATA: MaliyetGirdiHatasi V60 < 20M'de giris tanimsizdir'. wf_ayristirma_2.py (carry_senaryo_verisi, gerçek kos + hedef_b): 'tutulan ama 1ulp degisen sanal trend: 55', ör. (A08 49.53691013818879 -> 49.536910138188794, sanal_baglam yazıldı=True).",
+   "kaynak": "ayristirma",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "Kodu kendim okudum ve iddia doğru çıktı.\n\n1. hedef_b.py:211 önceki sanal trend miktarını ağırlığa çeviriyor: vT0 = s·fr/nav. K13 kırpması (hedef_b.py:215, copysign(min(|wT*|,|e|),e)) ya da bant.py:46'daki bant tutma, wT_b'yi tam olarak vT0'a eşitliyor. Coin evren dışında olduğu için ekstra geçersiz olsa bile kırpılmış wT* = vT0 olur.\n\n2. hedef_b.py:302 bu değeri miktara geri çeviriyor: vT0·nav/fr. Kayan noktada bu gidiş-dönüş miktarı her zaman aynı bırakmıyor. Kendi 50.000 rastgele denememde 8.336 örnekte değer değişti, 4.248 örnekte |q| büyüdü.\n\n3. karar.py:194 bu durumda yeni_t != durum.sanal_trend görüyor ve sanal_baglam yazıyor. ayristirma.py:201'deki dq == 0.0 koşulu sağlanmıyor, bacak maliyeti hesabına giriliyor.\n\n4. _azaltan(q0, dq) False döndüğü için cikis_mi=False gidiyor. bg.v60, karar anındaki V60 (karar.py:78) ve taban_alti'ndaki V60 ile aynı değer. V60 < 20M ise maliyet.py:29'daki dilim_bps MaliyetGirdiHatasi fırlatıyor. ayristirma.py içinde try/except yok, bu yüzden bütün ayrıştırma duruyor.\n\nBelgeyle çelişki: MIMARI §4.5 adım 5'te bant tutulunca bacak değişmez. §4.7'de bacak maliyeti yalnız gerçek |Δq^v| için alınır. §6.1'de <20M dilimi yalnız çıkışta tanımlıdır. K13/Y10 da bileşenin önceki değeri aşamayacağını söylüyor. Buna rağmen kod, tutulan bacakta 1 ulp'lik bir 'giriş' üretiyor. Y1–Y11'de bu durumu açıklayan bir yorum yok.\n\nV60 ≥ 20M coinlerde hata çökme yaratmıyor, yalnız anlamsız bir maliyet kaydı düşüyor. K13 yolunda ise ayrıştırma çöküyor. CARRY §5.1'e göre kapı bu çıktıya bağlı, dolayısıyla kapı da duruyor.\n\nUçtan uca bir K13 fikstürü (V60 düşen coin) kurmadım. Zincirin her halkasını ayrı ayrı gerçek kodla doğruladım: gerçek kos'ta tutulan ve 1 ulp büyüyen bacakları ve sanal_baglam yazımını gördüm, ardından aynı dq ile maliyet_hesapla'nın V60=12M'de çöktüğünü gösterdim.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_ayristirma_0_0.py. Betik, gerçek kos(carry_senaryo_verisi, mimari B) koşusunu ve maliyet_hesapla çağrısını kullanıyor.\n\nÇıktı:\nroundtrip farkli 8336 buyuyen 4248 /50000\ntutulan+1ulp BUYUYEN: 28 [(1696204800000, 'A08', 49.53691013818879, 49.536910138188794, True), (1696291200000, 'BTCUSDT', 0.04605212487313597, 0.04605212487313598, True), (1696377600000, 'A05', -600.6595111906515, -600.6595111906516, True)]\ndq 7.105427357601002e-15 _azaltan False\n50000000.0 ok 13.000000003576279\n12000000.0 HATA MaliyetGirdiHatasi V60 < 20M'de giris tanimsizdir; evren kurali bunu zaten disliyor (MIMARI Ss2.3)\n\nKod yolu:\n- hedef_b.py:211: vT0 = sanal_trend*fr/nav\n- hedef_b.py:215: K13 kırpması, sonuç e=vT0\n- bant.py:46: tutulunca w_mevcut=vT0\n- hedef_b.py:302: sanal_trend = wT_b*nav/fr (1 ulp sapma burada doğuyor)\n- karar.py:194: sanal_baglam yazılıyor\n- ayristirma.py:201: dq!=0 olduğu için maliyet hesabına giriliyor\n- ayristirma.py:215: _azaltan=False\n- maliyet.py:29: raise"
+    },
+    {
+     "gercek": true,
+     "siddet": "CIDDI",
+     "gerekce": "İddiayı çürütmeye çalıştım, çürütemedim. hedef_b.py:211 önceki sanal miktarı ağırlığa çeviriyor: vT0 = (s·fr)/nav. K13 dalı (hedef_b.py:215-216) |wT*| ≥ |e| olduğunda wT_star = copysign(|e|, e) = e değerini tam olarak veriyor. Ardından bant_uygula iki durumda da w = vT0 döndürüyor: w_mevcut = vT0 bandın içindeyse, ya da coin evren dışı olduğu için ekstra=True ise, ki V60 < 20M olan coin §2.3'e göre evren dışıdır. hedef_b.py:302 bu ağırlığı miktara geri çeviriyor: sanal_trend = (wT_b·nav)/fr. Bu gidiş-dönüş kayan noktada her zaman özdeşlik vermiyor, K13 yolunda denemelerin yaklaşık %9'unda |q1| > |q0| oluyor. Böylece Y10'un koymak istediği 'önceki sanal trend değerini aşamaz' kuralı 1 ulp kadar çiğneniyor.\n\nSonraki adımlar şöyle. karar.py:193-195'teki kesin != karşılaştırması bu coin için sanal_baglam yazıyor ve bağlamın v60 değeri < 20M oluyor, çünkü taban_alti ile aynı v60(g.barlar[c], t) fonksiyonu kullanılıyor. ayristirma.py:201 dq = 1 ulp olduğu için maliyet dalına giriyor. _azaltan(q0, dq) False dönüyor, bu yüzden maliyet_hesapla cikis_mi=False alıyor. maliyet.py:29 da MaliyetGirdiHatasi fırlatıyor. Sonuçta ayrıştırmanın tamamı duruyor.\n\nBu durum Y1–Y11 yorumlarının biri değil. Y10 trend bileşenine bir üst sınır koyuyor, kod ise sayısal gürültü yüzünden bu sınırı aşıyor. Ortaya çıkan sonuç iki belge kuralıyla da çelişiyor. §4.7'ye göre bacak maliyeti yalnız |Δq^v| için hesaplanır, tutulan bacakta Δq = 0 olmalı. §6.1'e göre de <20M dilimi yalnız çıkış için tanımlı. V60 ≥ 20M coinlerde etki yalnız 1 ulp'lik anlamsız bir maliyet kaydı. K13 coininde ise çöküş var ve CARRY §5.1'e göre kapı bu defteri okuduğu için kapı koşusu da duruyor. Kontrol koşumunda (q1 == q0) aynı günlük hatasız çalışıyor, yani çöküşün kaynağı yalnız bu 1 ulp.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_ayristirma_0_1.py. Betik, hedef_b'deki K13 kırpmasını ve bant_uygula yolunu aynı ifadelerle taklit ediyor, sonra ayristir'i çağırıyor. Birinci kararın bağlamı v60 = 30M, ikinci kararın bağlamı değişkeni de verilen v60 değeri.\nÇıktı:\nK13 yolunda |q1|>|q0|: 1846 / 20000\nq0 1234.61 q1 1234.6100000000001 dq 2.2737367544323206e-13\nv60 12000000.0 q_son==q0 False HATA: MaliyetGirdiHatasi V60 < 20M'de giris tanimsizdir; evren kurali bunu zaten disliyor (MIMARI Ss2.3)\nv60 12000000.0 q_son==q0 True ok trend_maliyet 4.7243320113207705\nv60 30000000.0 q_son==q0 False ok trend_maliyet 4.724332011320771\nv60 30000000.0 q_son==q0 True ok trend_maliyet 4.7243320113207705\nİlgili satırlar: hedef_b.py:211 vT0 = s*fr/nav; hedef_b.py:216 wT_star = copysign(min(|wT*|,|e|), e); hedef_b.py:302 sanal_trend = wT_b*nav/fr; karar.py:194 kesin != karşılaştırması; ayristirma.py:201-215 (dq != 0 ise _azaltan False olur ve cikis_mi=False gider); maliyet.py:29 raise."
+    }
+   ]
+  },
+  {
+   "siddet": "ORTA",
+   "dosya": "AKTIF_MODEL/v8/motor/ayristirma.py",
+   "satir": 69,
+   "baslik": "ayristir maliyet çarpanı k'yı günlükten okumuyor; k=2/3 koşusunda bacak maliyetleri k=1 ile hesaplanıyor ve özdeşlik bunu yakalamıyor",
+   "kural": "MIMARI §6.2 (her k ayrı tam koşudur; aynı tanım carry kapısında K6/K7'de kullanılır), §4.7 bacak maliyeti = §6.1 modeli c_i(k); CARRY §5.2 C_h, §5.1 (kapı motorun fonksiyonunu okur)",
+   "aciklama": "Başlangıç kaydı koşunun maliyet_k değerini taşıyor (bas.veri['maliyet_k']). ayristir ise bunu yok sayıp maliyet_k=1.0 varsayılanını kullanıyor. k=3 koşusunun günlüğüyle ayristir(gunluk, veri, p) çağrılırsa trend ve carry bacak maliyetleri k=1 ile hesaplanıyor. Aradaki fark netleme satırına düşüyor ve netleme negatif çıkıyor. Özdeşlik tanım gereği tuttuğu için (hata 1e-10) yanlışlık görünmüyor. Kapının K6/K7 maliyet çarpanı koşularında carry N = F + P − C, C eksik yazıldığı için olduğundan iyi görünür.",
+   "kanit": "wf_ayristirma_4.py (carry senaryosu, KosuAyarlari maliyet_k=3): 'gunlukteki maliyet_k: 3.0'; ayristir varsayilan -> {'trend_maliyet': 81.268, 'carry_maliyet': 15.219, 'netleme': -114.79} ozdeslik hata 1.06e-10; ayristir maliyet_k=3.0 -> {'trend_maliyet': 179.934, 'carry_maliyet': 34.5, 'netleme': 3.157} ozdeslik hata 1.06e-10.",
+   "kaynak": "ayristirma",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Hata gerçek. Başlangıç kaydı koşunun çarpanını yazıyor (geri_test.py:155, veri['maliyet_k']). Buna karşın ayristir (ayristirma.py:69) bu değeri okumuyor ve maliyet_k=1.0 varsayılanıyla bacak maliyetini hesaplıyor (satır 215). Değerin günlükteki k ile tutarlı olup olmadığını da denetlemiyor. MIMARI §6.2 her k için ayrı bir tam koşu ister ve aynı tanım carry kapısında K6/K7'de (m_c=2/3) kullanılır. §4.7'ye göre bacak maliyeti §6.1'deki c_i(k)'dir ve CARRY §5.1 kapının bu fonksiyonun çıktısını okuduğunu söyler. Bu yüzden k=3 koşusunun günlüğü varsayılan çağrıyla ayrıştırılırsa trend ve carry bacak maliyetleri k=1 ile yazılıyor. Aradaki fark netleme satırına düşüyor: k doğru verilince netleme +3,16, varsayılanla −114,79. Özdeşlik 1,06e-10 hatayla tutuyor, çünkü netleme tanım gereği farkı soğuruyor. Dolayısıyla özdeşlik hatayı yakalamıyor. Sonuçta K6/K7 koşularında C_h eksik yazılır ve carry N olduğundan iyi görünür. Y1–Y11 arasında k'yı ele alan bir yorum yok. Şiddet ORTA: çağıran k'yı elle verirse doğru sonuç çıkıyor ve kapı henüz koşulmadı, ama sessiz ve özdeşlikle görünmeyen bir yanlışlık bu.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_ayristirma_1_0.py (carry_senaryo_verisi, mimari B, t0=gün 92)\nkosu k= 1.0 gunluk maliyet_k= 1.0\n  ayristir k= 1.0 {'trend_maliyet': 81.309, 'carry_maliyet': 15.225, 'netleme': 1.483} hata 9.68e-11\nkosu k= 3.0 gunluk maliyet_k= 3.0\n  ayristir k= 1.0 {'trend_maliyet': 81.268, 'carry_maliyet': 15.219, 'netleme': -114.79} hata 1.058e-10\n  ayristir k= 3.0 {'trend_maliyet': 179.934, 'carry_maliyet': 34.5, 'netleme': 3.157} hata 1.058e-10\nKod: ayristirma.py:69 `def ayristir(gunluk, veri, p, maliyet_k: float = 1.0)`; ayristirma.py:74 bas okunuyor ama yalnız bas.veri['nav0'] kullanılıyor; ayristirma.py:215 maliyet_hesapla(maliyet_k, ...); geri_test.py:155 baslangic kaydına 'maliyet_k': ayar.maliyet_k yazılıyor. Depoda ayristir'ı maliyet_k ile çağıran hiçbir yer yok (yalnız test_v8_mimari_b.py:137, 161; ikisi de varsayılanı kullanıyor)."
+    },
+    {
+     "gercek": true,
+     "siddet": "DUSUK",
+     "gerekce": "Davranış doğrulandı ama iddia edilen şiddet abartılı. ayristirma.py:69'daki `ayristir(gunluk, veri, p, maliyet_k: float = 1.0)` koşunun k değerini günlükteki başlangıç kaydından okumuyor. Bu değer geri_test.py:155'te `bas.veri['maliyet_k']` olarak yazılıyor. Fonksiyon iki değer arasında tutarlılık denetimi de yapmıyor. Satır 215'teki `maliyet_hesapla(maliyet_k, ...)` çağrısı bu yüzden k=3 koşusunun günlüğünde bile varsayılan k=1 ile çalışıyor. Özdeşlik bu hatayı yakalayamaz: netleme = bacak maliyetleri − gerçek maliyet olarak tanımlandığı için bacak maliyetindeki hata netleme satırında birebir telafi ediliyor. Kuralın dayanağı MIMARI §6.2'de açık: \"Maliyet çarpanı k ∈ {1, 2, 3} yalnız dilim + etki terimine uygulanır ... Aynı tanım ve yöntem carry kapısında (K6/K7) ... kullanılır\". CARRY §5.2 bacak maliyetini \"C_h = Σ_i |Δq^C_i| · open_h · c_i / 10⁴; c_i, MIMARI §6 modelidir\" diye tanımlıyor. §5.1'e göre kapı bu fonksiyonun çıktısını okuyor. K6/K7 koşusunun günlüğü k verilmeden işlenirse C_i eksik yazılır ve netleme yapay biçimde negatif çıkar. Y1–Y11 arasında bu noktayı yorumlayan bir madde yok. Şiddeti düşük tuttum, çünkü hata henüz tetiklenmiyor. Parametre açıkça var ve doğru k verilince sonuç doğru çıkıyor. Depoda ayristir'i k≠1 günlüğüyle çağıran bir yer de yok: yalnız iki test çağrısı var ve ikisi de k=1 koşusu. Carry kapısı kodu henüz yazılmadı. Sorun bu nedenle şu an yanlış sonuç üretmiyor; ileride bir çağıran k'yı vermeyi unutursa sessizce yanlış sonuç üretir. Düzeltme için k günlükten okunmalı ya da verilen değer günlükteki değerle karşılaştırılıp uyuşmazlıkta hata fırlatılmalı.",
+     "kanit": "İddiacının betiğini (<ev>/.claude/jobs/c8cce3b6/tmp/wf_ayristirma_4.py) yeniden çalıştırdım, sonuç aynı çıktı:\ngunlukteki maliyet_k: 3.0\nayristir maliyet_k= varsayilan {'trend_maliyet': 81.268, 'carry_maliyet': 15.219, 'netleme': -114.79} ozdeslik hata 1.0577e-10\nayristir maliyet_k= 3.0 {'trend_maliyet': 179.934, 'carry_maliyet': 34.5, 'netleme': 3.157} ozdeslik hata 1.0577e-10\nKod dayanağı: ayristirma.py:69 `def ayristir(gunluk, veri, p, maliyet_k: float = 1.0)`, satır 74'te `bas` yalnız nav0 için okunuyor, satır 215 `maliyet_hesapla(maliyet_k, ...)`. geri_test.py:155 başlangıç kaydına 'maliyet_k' yazıyor. Çağıranlar: yalnız test_v8_mimari_b.py:137 ve :161, ikisi de k verilmeden çağrılıyor ve k=1 koşusu."
+    }
+   ]
+  },
+  {
+   "siddet": "ORTA",
+   "dosya": "AKTIF_MODEL/v8/motor/ayristirma.py",
+   "satir": 134,
+   "baslik": "Bacakların eksik-funding dolgusu yalnız gerçek pozisyonun dolgu aldığı saatlerde yazılıyor; aynı q^C,v için carry funding satırı trend bacağının netlemesine bağlı",
+   "kural": "MIMARI §4.7 (Carry funding = q^C,v alt miktarlarının funding'i), §2.6 dolgu nakit_h = −q(h−)·mark(h)·r*; CARRY §4.2 madde 5–6 (dolgu P&L'e girer; dolgu tutarı bacak ve isim bazında raporlanır), §5.2 F^alt",
+   "aciklama": "Bacak dolgusu yalnız günlükteki gerçek funding_dolgu kaydının 'saatler' listesinden üretiliyor. funding.py:159-174 ise bu listeye yalnız gerçek q(h−) ≠ 0 olan saatleri koyuyor. geri_test.funding_adimi de pozisyonsuz coini hiç sınamıyor. Sonuç olarak gerçek net pozisyon 0 iken bacaklar sıfırdan farklıysa bacaklara hiç dolgu yazılmıyor. Bu durum trend +x ile carry −x birbirini netlediğinde, lot/minNotional yüzünden emir çıkmadığında ya da gerçek pozisyon kapandıktan sonraki saatlerde (bit kesmesi) ortaya çıkıyor. Aynı carry bacağı gerçek pozisyon sıfırdan farklıyken en kötü oranla dolgu ödüyor, sıfırken ödemiyor. Böylece carry funding satırı sanal carry miktarının değil, trend bacağının ve icranın fonksiyonu oluyor. Gerçek pozisyonun tam 0 olduğu durumda tutarlılık kopuyor: bacaklar en kötü oranla ödemiyor ve carry olduğundan iyi görünüyor.",
+   "kanit": "wf_ayristirma_3.py (X: 16. saatten sonra funding kaydı yok, barlar sürüyor; olaylar funding_saati ile üretildi, qC = −1000 her üç dünyada aynı): Dünya 1 qT=0 (gerçek q=−1000) -> carry_funding −1.875; Dünya 2 qT=+1000 (gerçek q=0) -> carry_funding +2.0 (dolgu yok); Dünya 3 qT=+999 (gerçek q=−1) -> carry_funding −1.875, trend_funding −5.87, icra_artigi +7.74.",
+   "kaynak": "ayristirma",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Hata gerçek; karşı örnekle yeniden ürettim. ayristirma.py:134-144 bacak dolgusunu yalnız gerçek 'funding_dolgu' kaydının 'saatler' listesinden üretiyor. funding.py:159-174 (_saat_tutari → q==0 ise 0, sonra t != 0 süzgeci; ayrıca gecmis[-1][1]==0 ise bit kesmesi) bu listeye yalnız gerçek net q(h−) ≠ 0 olan saatleri koyuyor. Bu yüzden net pozisyon 0 iken sanal bacaklara hiç dolgu yazılmıyor.\n\nBelgeye göre durum şöyle:\n- MIMARI §4.7: \"Carry funding = q^C,v alt miktarlarının funding'i\".\n- CARRY §5.2: F^alt_T = Σ −q^C_i(T−)·m_i(T)·ρ_i(T); tanım bacak miktarına bağlı, net pozisyona değil.\n- MIMARI §2.6: eksik olay coin bazında tanımlanıyor (son gerçek kayıttan 1,5·Δ geçti ve bar akışı sürüyor), pozisyon bazında değil.\n- CARRY §4.2 m.6: dolgu tutarı bacak ve isim bazında raporlanır.\n\nKod gerçek kayıtlarda bu tanıma uyuyor: satır 133 bacak miktarını net q'dan bağımsız kullanıyor. Eksik kayıtta ise carry funding satırı trend bacağının ve icranın fonksiyonu oluyor:\n- Net 0 (trend +x, carry −x): carry, en kötü oranlı dolguyu hiç ödemiyor.\n- Net −1: aynı carry bacağı tam dolguyu ödüyor. Fark icra artığına düşüyor, özdeşlik bozulmuyor.\n\nKapının okuduğu N = F + P − C satırı bu nedenle aynı q^C için tutarsız çıkıyor ve net 0 iken carry olduğundan iyi görünüyor. Y1–Y11'in hiçbiri bu noktayı yorumlamıyor. Docstring'deki \"gerçek dolgu kaydının saatleri\" tercihi belgedeki bacak tanımıyla çelişiyor.\n\nŞiddet ORTA: özdeşlik ya da NAV bozulmuyor, yalnız satır dağılımı etkileniyor. Bu da ancak eksik funding olayı ile net 0 / bacak ≠ 0 durumu birlikte oluştuğunda görülüyor. Bu durum nadir ama sistematik olarak carry lehine.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_ayristirma_2_0.py. İddiacının betiğine, kayıtların eksiksiz olduğu bir kontrol durumu ekledim. qC = −1000 bütün dünyalarda aynı.\n\nEksik kayıt (16. saatten sonra funding yok, barlar sürüyor):\n- Dunya 1, qT=0 (q=−1000): carry_funding −1.875, icra_artigi 0.0\n- Dunya 2, qT=+1000 (q=0): trend_funding −2.0, carry_funding +2.0 (dolgu yok), icra_artigi 0.0\n- Dunya 3, qT=+999 (q=−1): trend_funding −5.8691, carry_funding −1.875, icra_artigi +7.7423, artik_carry 3.8731\n\nTam kayıt (8 saatte bir, 48 saat):\n- Dunya 1: carry_funding 5.0\n- Dunya 2: trend_funding −5.0, carry_funding 5.0\n\nGerçek kayıtlarda carry_funding trend bacağından bağımsız. Dolguda ise yalnız net q'nun 0 olup olmamasına göre −1.875 ile +2.0 arasında değişiyor. Kaynaklar:\n- ayristirma.py:134-144: yalnız k.veri['saatler'] üzerinde döngü.\n- funding.py:159-174: q_once==0 olan saatler süzülüyor, gecmis[-1][1]==0 ise bit kesiliyor."
+    },
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "İddiayı çürütemedim. AKTIF_MODEL/v8/motor/ayristirma.py:134-143, bacak dolgusunu yalnız günlükteki gerçek 'funding_dolgu' kaydının 'saatler' listesinden üretiyor. motor/funding.py:159-174 bu listeye yalnız gerçek q(h−) ≠ 0 olan saatleri koyuyor (_saat_tutari 0 dönerse saat atılıyor). Gerçek pozisyon kapandıktan sonraki saatler 'bit' kesmesiyle zaten dışarıda kalıyor. geri_test.funding_adimi (satır 73-74) de pozisyonu ya da geçmişi olmayan coin için funding_saati'ni hiç çağırmıyor.\n\nBelge ne diyor:\n- MIMARI §4.7 tablosu: \"Carry funding | q^C,v alt miktarlarının funding'i\". Satır sanal carry miktarının fonksiyonudur.\n- MIMARI §2.6: \"nakit_h = −q_i(h−)·mark_i(h)·r*_i. Yalnız bar akışının sürdüğü saatler dolgu alır.\" Aynı bölüm şunu da söylüyor: \"Eksik olay sayısı, dolgu saatleri ve ters kayıtlar coin ve bacak bazında raporlanır.\"\n- CARRY §4.2 madde 6: \"Doldurulan kayıt sayısı ve funding tutarı bacak ve isim bazında raporlanır.\"\n\nBelge bacak dolgusunu gerçek pozisyonun sıfırdan farklı olmasına bağlayan bir koşul koymuyor. Koşul, bar akışının sürmesi. ILERLEME_SLICE3.md içindeki Y1–Y11'de dolguyla ilgili bir yorum yok. Konu, belgelenmiş \"geç gelen funding\" sınırı da değil.\n\nSonuç: aynı q^C,v = −1000 için carry funding satırı, trend bacağının netlemesine göre en kötü oranlı dolgu ödüyor ya da hiç ödemiyor. Gerçek q = −1 iken −1,875, gerçek q = 0 iken dolgu yok (+2,0 yalnız gerçek kayıtlar). Böylece gerçek pozisyon tam 0 olduğunda carry olduğundan iyi görünüyor. Özdeşlik bozulmuyor (fark icra artığına düşüyor, ayrıca bir süreksizlik de var). Buna karşın satır tanımı (§4.7) ve bacak bazlı dolgu raporu (§2.6, CARRY §4.2.6) ihlal ediliyor.\n\nŞiddeti ORTA verdim. Hata yalnız eksik funding olaylarında, bir de netleme, lot/minNotional ya da kapanmış pozisyon durumunda ortaya çıkıyor. Kapının F satırına ise yanlılık olarak giriyor.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_ayristirma_2_1.py. Gerçek motor.funding.funding_saati ve motor.ayristirma.ayristir kullanıldı. X coininde 16. saatten sonra funding kaydı yok, barlar sürüyor. qC = −1000 üç dünyada da aynı.\n\nDunya 1: qT=0,    qC=-1000 (gercek q=-1000): trend_funding 0.0, carry_funding -1.875, icra_artigi 0.0, dnav -1.875\nDunya 2: qT=+1000, qC=-1000 (gercek q=0): trend_funding -2.0, carry_funding 2.0 (dolgu yok), icra_artigi 0.0, dnav 0.0\nDunya 3: qT=+999, qC=-1000 (gercek q=-1): trend_funding -5.8691, carry_funding -1.875, icra_artigi 7.7423, artik_carry 3.8731\n\nKoddaki davranış:\n- ayristirma.py:134: `if k.tur == 'funding_dolgu': for h, _ in k.veri['saatler']:` Bacak dolgusu yalnız gerçek dolgu kaydı varsa yazılıyor.\n- funding.py:160-162: `q = q_once(gecmis, h); if q == 0.0: return 0.0`\n- funding.py:171-172: `saatler = [(h, t) ... if t != 0.0]` ile `if saatler:` Gerçek q = 0 ise kayıt hiç oluşmuyor.\n\nBelge:\n- MIMARI §4.7: \"Carry funding | q^C,v alt miktarlarının funding'i\"\n- MIMARI §2.6: \"nakit_h = −q_i(h−)·mark_i(h)·r*_i. Yalnız bar akışının sürdüğü saatler dolgu alır. ... dolgu saatleri ve ters kayıtlar coin ve bacak bazında raporlanır.\""
+    }
+   ]
+  },
+  {
+   "siddet": "DUSUK",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 148,
+   "baslik": "λ her gün 1,0 yazılıyor ve durumda tutulmuyor; kaçırılan Pazartesi sonrası λ 'son karar kaydındaki haliyle' kalmıyor",
+   "kural": "MIMARI §4.5 adım 6 (\"Her gün c_g, c₁, c₂, κ^C, λ, hedge ağırlığı ve bağlayan tavan kaydedilir\"), §4.4 adım 6 (\"λ ve bağlayan bacak kaydedilir\"), §5.1 StratejiDurumu {… carry haftası, q^C*_i, β_i, λ geçmişi …}, §5.8 (\"carry miktarları ve λ son karar kaydından\"; \"Kaçırılan haftalık carry kararında q^C*, β ve λ son karar kaydındaki haliyle sonraki Pazartesi'ye kadar kalır\")",
+   "aciklama": "hedef_b.py:148'de `lam, bagli = 1.0, ''` ile başlanıyor. Bu değerler yalnız Pazartesi dalında (satır 179) hk.lam ile güncelleniyor. Hafta içi günlerde carry_json['lam'] (satır 316) 1.0, 'bagli_bacak' ise '' yazılıyor. Oysa o haftanın q^C* miktarları Pazartesi λ'sıyla (ör. 0,934) küçültülmüş durumda. Aynı gün hafta içi çıkıştan doğan yeniden nötrleme λ'sı da 'lam' alanına değil, yalnız tanilar['lambda_hafta_ici'] alanına gidiyor. Durum tarafında durum.py:81-86 StratejiDurumu'na λ alanı eklenmemiş ve kayit_uygula (satır 167-174) λ'yı karar kaydından okumuyor. Bu yüzden belgenin durum sözleşmesindeki 'λ geçmişi' ve §5.8'deki 'λ son karar kaydındaki haliyle kalır' kuralı karşılanmıyor. Somut senaryo: günlük karar kayıtlarından 'lam' okuyan bir rapor ya da banka denetimi, Pazartesi günleri dışında hep λ = 1 (bağlamadı) görür. Hafta içi çıkış günü de gerçek λ yerine 1 görür. Böylece λ bağlama sıklığı olduğundan az raporlanır. Kaçırılan Pazartesi haftasında da kayıtlar, eski haftanın λ'sı yerine 1,0 taşır. λ hiçbir hesabın girdisi olmadığı için hedef, emir ve NAV etkilenmez; hata yalnız kayıt ve durum sözleşmesindedir.",
+   "kanit": "wf_durum_parite_b3.py (carry_senaryo_verisi, mimari='B', gün 92-107) çıktısı:\n93 haftalik True lam 1.0 bagli ''\n94..99 haftalik False lam 1.0 bagli ''\n96 haftalik False lam 1.0 bagli '' hafta_ici_lam 0.722509856714715\n100 haftalik True lam 0.9344789980331664 bagli 'long'\n101..106 haftalik False lam 1.0 bagli ''   <- q^C* hâlâ gün 100'ün λ=0,934 ile küçültülmüş miktarları\n107 haftalik True lam 0.9300405492974031 bagli 'short'\nAyrıca StratejiDurumu alanları: carry_q, carry_beta, carry_hafta_ms, sanal_trend, sanal_carry, sc_son (λ yok).",
+   "kaynak": "durum_parite",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "DUSUK",
+     "gerekce": "İddiayı çürütmeye çalıştım ama çürütemedim. Kod ve karşı örnek iddiayı doğruluyor.\n\nKodda gördüklerim:\n- hedef_b.py:148, `lam, bagli, carry_tan = 1.0, '', {}` ile başlıyor.\n- λ yalnız `haftalik and carry_aktif` dalında (satır 179, `hk.lam`) güncelleniyor.\n- Hafta içi günlerde carry_json 'lam' alanına 1.0, 'bagli_bacak' alanına '' yazılıyor. Oysa q_yildiz, durumdan gelen ve Pazartesi λ'sıyla küçültülmüş miktarları taşıyor.\n- Hafta içi çıkış λ'sı (`lam2`) 'lam' alanına gitmiyor, yalnız tanilar['lambda_hafta_ici'] alanına yazılıyor.\n- durum.py:81-86'daki StratejiDurumu'nda λ alanı yok.\n- kayit_uygula (durum.py:167-174) karar kaydından q, β, hafta damgası, sanal miktarlar ve sc_son değerlerini okuyor, λ'yı okumuyor.\n\nBelgenin açık kuralları:\n- MIMARI §5.1: StratejiDurumu {… q^C*_i, β_i, λ geçmişi …}.\n- §5.8: \"carry miktarları ve λ son karar kaydından … yeniden kurulur\".\n- §5.8, kaçırılan Pazartesi: \"q^C*, β ve λ son karar kaydındaki haliyle sonraki Pazartesi'ye kadar kalır\".\n- §4.5 adım 6: \"Her gün … λ … kaydedilir\".\n\nY1–Y11 arasında λ'nın durumda tutulmamasını ya da hafta içi 1,0 yazılmasını açıklayan bir yorum yok. Dolayısıyla bu bir belge boşluğu yorumu değil, belgeyle açık bir çelişki.\n\nKarşı görüş: hafta içi çıkış λ'sı tanılar alanında kayıtlı. Bu yüzden o günkü değer kaybolmuyor, yalnız yanlış alana yazılıyor. Ancak normal hafta içi günlerde yazılan 'lam'=1,0, o haftanın gerçek λ'sı (ör. 0,934) değil. Bu yanıltıcı bir kayıt. Durum sözleşmesindeki λ alanı da tamamen eksik.\n\nŞiddet: λ hiçbir hesabın girdisi değil. Hedef, emir, NAV ve özdeşlik etkilenmiyor. Sorun yalnız kayıt ve durum sözleşmesinde, bu yüzden DUSUK.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_durum_parite_0_0.py. carry_senaryo_verisi kullanıldı, mimari='B', günler 92–107.\n\nÇıktı:\n93 haftalik True lam 1.0 bagli '' hafta_ici_lam None\n96 haftalik False lam 1.0 bagli '' hafta_ici_lam 0.722509856714715\n100 haftalik True lam 0.9344789980331664 bagli 'long' hafta_ici_lam None\n101..106 haftalik False lam 1.0 bagli '' hafta_ici_lam None\n107 haftalik True lam 0.9300405492974031 bagli 'short' hafta_ici_lam None\n\nStratejiDurumu'daki carry ile ilgili alanlar: ['carry_q', 'carry_beta', 'carry_hafta_ms', 'sanal_carry']. λ alanı yok.\n\nKod:\n- hedef_b.py:148, `lam, bagli, carry_tan = 1.0, '', {}`\n- hedef_b.py:179, `q_yildiz, lam, bagli = hk.q_yildiz, hk.lam, hk.bagli_bacak` (yalnız Pazartesi)\n- hedef_b.py:188, `carry_tan['lambda_hafta_ici'] = lam2` ('lam' alanına yazılmıyor)\n- durum.py:167-174, kayit_uygula λ'yı karar kaydından okumuyor.\n\nİhlal edilen belge kuralları: MIMARI §5.1 (\"λ geçmişi\"), §5.8 (\"carry miktarları ve λ son karar kaydından\"; \"q^C*, β ve λ son karar kaydındaki haliyle … kalır\"), §4.5 adım 6."
+    },
+    {
+     "gercek": true,
+     "siddet": "DUSUK",
+     "gerekce": "Kodu ve belgeyi kendim okudum; iddia doğru. Belge λ'yı hem günlük kayda hem durum sözleşmesine koyuyor.\n\n- MIMARI §4.5 adım 6: \"Her gün c_g, c₁, c₂, κ^C, λ, hedge ağırlığı ve bağlayan tavan kaydedilir.\"\n- §4.4 adım 6: \"λ ve bağlayan bacak kaydedilir.\"\n- §5.1 StratejiDurumu: \"{... carry haftası, q^C*_i, β_i, λ geçmişi, ...}\"\n- §5.8: \"carry miktarları ve λ son karar kaydından ... yeniden kurulur\" ve \"Kaçırılan haftalık carry kararında q^C*, β ve λ son karar kaydındaki haliyle sonraki Pazartesi'ye kadar kalır\".\n\nKoddaki davranış:\n- hedef_b.py:148, `lam, bagli = 1.0, ''` ile başlıyor. Bu değer yalnız Pazartesi dalında (satır 179, `hk.lam`) güncelleniyor.\n- Hafta içi günlerde carry_json['lam'] (satır 316) 1.0, 'bagli_bacak' '' yazılıyor. O haftanın q^C* miktarları ise Pazartesi λ'sıyla küçültülmüş haliyle taşınıyor.\n- Hafta içi çıkıştan doğan yeniden nötrleme λ'sı (lam2, satır 188-190) yalnız carry_tan['lambda_hafta_ici'] alanına yazılıyor.\n- durum.py:81-86 StratejiDurumu'nda λ alanı yok. kayit_uygula (satır 167-174) karar kaydından q, β, hafta, sanal miktarlar ve sc_son değerlerini okuyor, λ'yı okumuyor.\n- Kaçırılan Pazartesiden sonraki günlerde de kayıt, son karar kaydındaki λ yerine 1,0 taşıyor.\n\nBu bir Y yorumu değil. ILERLEME_SLICE3.md satır 16, yazarın kendi planında \"karar.py / durum.py: carry durumu (q^C*, β, λ, hafta damgası)\" diyor. Yani kod, yazarın planıyla da tutarsız.\n\nEtki: λ hiçbir hesaba girdi olmuyor, çünkü q^C* zaten λ ile çarpılmış olarak saklanıyor. Bu yüzden hedef, emir ve NAV değişmiyor. Hata yalnız kayıt ve durum sözleşmesinde. Kayıttan λ okuyan bir rapor veya denetim, hafta içi günlerin tamamında ve kaçırılan Pazartesi haftasında λ=1 görür. Bu da λ'nın bağlama sıklığını olduğundan az gösterir. Şiddet: DUSUK.",
+     "kanit": "Bu doğrulamada karşı örnek betiği çalıştırmadım. Aşağıdakiler doğrudan kod ve belge okumasından; koşu çıktısı iddiacının wf_durum_parite_b3.py betiğinden.\n\nKod:\n- AKTIF_MODEL/v8/motor/hedef_b.py:148: `lam, bagli, carry_tan = 1.0, '', {}`\n- :179 (yalnız `if haftalik and carry_aktif`): `q_yildiz, lam, bagli = hk.q_yildiz, hk.lam, hk.bagli_bacak`\n- :184 else dalı: `q_yildiz = dict(q_eski)` (λ güncellenmiyor)\n- :188-190: `q_yildiz, lam2, bagli2 = hafta_ici_guncelle(...)`; `carry_tan['lambda_hafta_ici'] = lam2` ('lam' alanı değişmiyor)\n- :316: `'hafta_ms': hafta_ms, 'lam': lam, 'bagli_bacak': bagli`\n- AKTIF_MODEL/v8/motor/durum.py:81-86 alanları yalnız carry_q, carry_beta, carry_hafta_ms, sanal_trend, sanal_carry, sc_son (λ yok).\n- durum.py:167-174 kayit_uygula, cr['lam'] değerini okumuyor.\n\nBelge (MIMARI.md): satır 567 \"Her gün c_g, c₁, c₂, κ^C, λ, hedge ağırlığı ve bağlayan tavan kaydedilir\"; satır 632 \"StratejiDurumu: {... carry haftası, q^C*_i, β_i, λ geçmişi, ...\"; satır 748 \"carry miktarları ve λ son karar kaydından\"; satır 757-758 \"Kaçırılan haftalık carry kararında q^C*, β ve λ son karar kaydındaki haliyle sonraki Pazartesi'ye kadar kalır\".\n\nILERLEME_SLICE3.md:16 \"karar.py / durum.py: carry durumu (q^C*, β, λ, hafta damgası)\".\n\nİddiacının çıktısı: 100. gün lam 0.934 'long'; 101-106. günler lam 1.0 '' (q^C* hâlâ λ=0,934 ile küçültülmüş); 96. gün hafta_ici_lam 0.7225 iken 'lam' 1.0."
+    }
+   ]
+  }
+ ],
+ "tartismali": [
+  {
+   "siddet": "DUSUK",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 174,
+   "baslik": "Pazartesi tutulan (işlem dışı) carry isminin β'sı yeniden hesaplanmıyor; önceki haftanın β'sı bir hafta daha hedge'e giriyor",
+   "kural": "MIMARI §4.3 'β_i Pazartesi kararında hesaplanır ve hafta boyunca sabittir'; §4.5 adım 0 hedge w^C_BTC = −Σ β_i·w^C_i. Y7 yalnız miktarın korunmasını söyler, β'yı değil.",
+   "aciklama": "sabit_mevcut isimler (Pazartesi işlem dışı, Y7) için beta = durum.carry_beta[c] (önceki Pazartesi'nin β'sı) alınıyor; beta_tahmin çağrılmıyor. beta_tahmin eksik günleri zaten atlayan ortak-tanımlı getirilerle çalıştığından β hesaplanabilir durumdadır. Senaryo: X short, pazar günü >8h bar boşluğu (§2.5(d)) yüzünden Pazartesi işlem dışı; miktarı korunur ama β geçen haftanın 1,4'ü kalır, güncel 60 günlük OLS 0,9 verse bile hafta boyunca hedge 1,4 ile kurulur (β iki hafta boyunca sabit kalır). Blok beta-nötrlüğü §4.3 tanımına göre yanlış β ile kurulur.",
+   "kanit": "hedef_b.py:174-176: beta = {**{c: beta[c] for c in sabit_mevcut if c in beta}, **beta_yeni}; beta_yeni yalnız 'uygun' isimler için (satır 154-164) hesaplanıyor; sabit_mevcut isimler uygun listesinde değil.",
+   "kaynak": "carry",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "DUSUK",
+     "gerekce": "İddia doğrulandı. Hata hedef_b.py:174-176'da. `beta_yeni` yalnız `uygun` isimler için hesaplanıyor (satır 154-164). Pazartesi işlem dışı olan ve Y7 gereği tutulan `sabit_mevcut` isimlerin β'sı ise durum.carry_beta'dan, yani önceki Pazartesi'nin değerinden alınıyor. Bu isimler Pazartesi kitabında kalıyor: haftalik_kitap bu β ile ölçekliyor, gunluk_blok da BTC hedge'ini bu β ile kuruyor. Kural MIMARI §4.3'te açık ve genel: \"β_i Pazartesi kararında hesaplanır ve hafta boyunca sabittir.\" Y7 yalnız miktarın korunmasını söylüyor (\"mevcut miktarı korunur (sabit)\"), β hakkında bir yorum içermiyor. Y5 de sadece β̂'nın nasıl hesaplanacağını tanımlıyor. β teknik olarak hesaplanabilir durumda: isim k_coinler içinde olduğu için gunluk[c] kurulu, beta_tahmin de NaN günleri ortak maskeyle zaten atlıyor. Sonuç: eski β bir hafta daha kullanılıyor ve toplamda iki hafta sabit kalıyor. Bu durumda blok beta-nötrlüğü, §4.3'ün tanımladığı güncel β'ya göre kurulmamış oluyor. Çarpıcı bir durum değil, ama BTC hedge'i ölçülebilir biçimde kayıyor; bu yüzden şiddeti DUSUK verdim. Kapsam dışı bir yan gözlem de var: aynı koşuda \"sabit\" A02'nin q^C* değeri 275,57'den 211,39'a değişti. Bu, Y7'deki \"miktar korunur\" ifadesiyle ayrıca incelenmeli; bu bulguya dahil değil.",
+     "kanit": "Betik: <ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_carry_1_0.py. Kurgu: carry_senaryo_verisi ile Mimari B koşusu yapıldı. Gün 107 (Pazartesi) için A02'nin [t-1h, t) barı eksik_saatler ile silindi; aynı tohumla üretildiği için geri kalan veri özdeş. Durum, karar öncesi günlükten durum_turet ile kuruldu, ardından karar_ver çağrıldı. Çıktı:\nonceki beta {'A02': 0.29488941454527595, ...}\nnormal Pazartesi beta {'A02': 0.32971928064552214, ...}  (tek saatlik bar dışında aynı veriyle yapılan normal Pazartesi hesabı)\nX A02 sabit mi True\nX q eski 275.5697600808369 yeni 211.3886897038211\nX beta karar 0.29488941454527595 durum.carry_beta 0.29488941454527595\nYani işlem dışı Pazartesi'de A02'nin β'sı yeniden hesaplanmıyor. Hafta boyunca hedge'de geçen haftanın değeri olan 0,2949 kullanılıyor; güncel 60 günlük hesap yaklaşık 0,3297 verirdi. Kod: hedef_b.py:174 `beta = {**{c: beta[c] for c in sabit_mevcut if c in beta}, **beta_yeni}`; beta_yeni yalnız `for c in uygun` döngüsünde (satır 154-164) dolduruluyor."
+    },
+    {
+     "gercek": false,
+     "siddet": "YOK",
+     "gerekce": "Kodun davranışı iddiada anlatıldığı gibi: hedef_b.py:171-176'da sabit_mevcut isimler (Pazartesi işlem dışı, Y7) için beta = durum.carry_beta[c] (önceki Pazartesi'nin β'sı) kullanılıyor, beta_tahmin yalnız 'uygun' isimler için çağrılıyor (154-164). Ama bu, belgeye AÇIKÇA aykırı değil. MIMARI §4.3 (satır 490-491) birebir: \"β_i = 0,5·β̂_i + 0,5; β̂_i: son 60 günün günlük log getirileriyle BTC'ye OLS betası. β_i Pazartesi kararında hesaplanır ve hafta boyunca sabittir.\" Bu cümle, Pazartesi kararında seçilen ve boyutlandırılan isimleri anlatıyor. İşlem dışı bir isim ise o Pazartesi kararına girmiyor: §2.5(d)/§3.1'e göre sabit tutuluyor, Y7'ye göre de yeni seçilmiyor ve miktarı korunuyor. Belge, Pazartesi kararının dışında kalıp önceki haftadan taşınan bir ismin β'sının yeniden tahmin edilip edilmeyeceğini söylemiyor. Yazar da ismi önceki kararın durumuyla birlikte (miktar + β) dondurmayı seçmiş; bu, belgedeki boşluğun makul bir yorumu. Blok beta-nötrlüğü (§4.3 satır 492-498: w^C_BTC = −Σ β_i·w^C_i, o günkü gerçek alt sepeti üzerinden) kodda bozulmuyor: gunluk_blok, hedge'i her gün bloğun kendi β kaydıyla yeniden kuruyor. Tartışılan tek şey, sabit isim için β tahmininin tazeliği. Bu bir tanım tercihi; belgeyle çelişki, look-ahead ya da sayısal hata yok. Nokta belirsiz, talimat gereği gercek=false.",
+     "kanit": "MIMARI.md:490-491 \"β_i Pazartesi kararında hesaplanır ve hafta boyunca sabittir.\" — bu, işlem dışı olduğu için Pazartesi kararına girmeyen, taşınan isimleri kapsamıyor. ILERLEME_SLICE3.md:33 Y7: \"Pazartesi işlem dışı (§2.5(d)) ya da bugünkü kapanışı olmayan isim yeni seçilmez; mevcut miktarı korunur (sabit).\" hedef_b.py:174 beta = {**{c: beta[c] for c in sabit_mevcut if c in beta}, **beta_yeni} — β_yeni yalnız uygun isimler için (164). Blok hedge'i her gün gunluk_blok(q_yildiz, beta, ...) ile yeniden kuruluyor (191), yani blok, kullanılan β'ya göre beta-nötr kalıyor. Davranış koddan açıkça okunduğu için karşı örnek betiği yazmadım; tartışma yorumla ilgili."
+    }
+   ]
+  },
+  {
+   "siddet": "ORTA",
+   "dosya": "AKTIF_MODEL/v8/motor/net_cozucu.py",
+   "satir": 150,
+   "baslik": "κ adımı, isim tavanı artefaktı yüzünden κ=0'a düşüp bütün kitabı global katsayıyla küçültüyor",
+   "kural": "MIMARI §4.5 adım 1 (isim tavanı yalnız o coinin trend bileşenini kırpar) ve adım 3 (ihlal sürerse κ^C, yine sürerse tek katsayı); §3.5 'aşan ağırlık tavana kırpılır'",
+   "aciklama": "Adım 1, trend long ile carry short içeren bir ismin trendini κ=1 varsayımıyla net tavana (0,06) kırpıyor. κ küçüldükçe bu isim tavanı aşıyor. hepsi_ok(0) yalnız bu isim tavanı yüzünden yanlış dönüyor; kod bu durumda κ=0 alıp 'global' son çareye geçiyor. Global katsayı, isim tavanı adayıyla (0,06/0,07) tavana değmeyen trend isimleri de dahil bütün serbest kitabı küçültüyor. Oysa κ≈0,8 ile birlikte yalnız o ismin trendinin adım 1 kuralıyla yeniden kırpılması bütün koşulları sağlıyor. Carry bloğu gereksiz yere tamamen kapanıyor ve ilgisiz trend isimleri küçülüyor. Y11 son çareyi öngörüyor ama κ=0'ın 'yetmemesi' κ'nın kendi yarattığı isim ihlalinden kaynaklanıyor; bu yüzden yorum kendi içinde tutarsız.",
+   "kanit": "wf_cozucu_6.py: A için trend 0.10, carry -0.01; 23 carry short -0.01; 10 carry long +0.01; 5 sabit alt short -0.03 (kendi tavanı içinde); B için trend +0.05. Sonuç: baglayan ('isim','S2','kappa','global'), kappa=0.0, global=0.857, B net=0.0429 (ham 0.05, hiçbir tavana bağlı değil). Alternatif κ=0.8 ve yalnız A'nın trendi (0.06+0.8·0.01)/0.10: S1=0.133, S2=0.182, brüt=0.524, isim ok=True, B net=0.05.",
+   "kaynak": "cozucu",
+   "oylar": [
+    {
+     "gercek": true,
+     "siddet": "ORTA",
+     "gerekce": "Karşı örneği çalıştırdım; iddia doğrulandı. Hata net_cozucu.py:140-161 ve 166-180 aralığında. hepsi_ok() κ koşuluna isim tavanını da katıyor (Codex 4. tur düzeltmesi). Adım 1'de A'nın trendi κ=1 varsayımıyla c=0,7'ye kırpılıyor. Carry short (-0,01) κ<1 ile küçülünce A'nın net ağırlığı 0,06 tavanını aşıyor (κ=0'da 0,07). Bu yüzden (0,1) aralığındaki hiçbir κ, κ=1 dışında, hepsi_ok'u sağlamıyor. hepsi_ok(0) da yalnız bu isim ihlali yüzünden yanlış dönüyor; S1=0,084 ve S2=0,09 ikisi de sınırın altında. Kod κ=0 alıyor ve 'global' son çareye geçiyor. Global katsayı A'nın isim adayından 0,857 çıkıyor ve bütün serbest kitabı küçültüyor. Hiçbir tavana değmeyen B de 0,05'ten 0,0429'a iniyor; carry bloğu tamamen kapanıyor. Bu davranış belgeye aykırı: MIMARI §4.5 adım 3'e göre κ yalnız S1/S2 ihlali sürerse devreye girer, tek katsayılı son çare de ancak ihlal 'yine sürerse' uygulanır. Burada κ=0'da iki şok da sağlanıyor. Adım 1 ve §3.5'e göre isim tavanı aşımı yalnız o ismin trend bileşeni kırpılarak çözülür, global küçültmeyle çözülmez. Kod yazarın kendi Y11 yorumuyla da çelişiyor: Y11 κ'yı 'her iki şok birlikte sağlanana kadar' ikiye bölmeyle arıyor ve global küçültmeyi 'κ=0 yetmezse' koşuluna bağlıyor. Bu örnekte κ=0 şoklar için yetiyor; global adımı κ'nın kendi yarattığı isim ihlali tetikliyor. Belgeye uygun bir çözüm var: κ≈0,8 ile A'nın trendi adım 1 kuralıyla (0,06+0,8·0,01)/0,10 değerine yeniden kırpılır. Bu durumda S1=0,133, S2=0,182, brüt=0,524 olur, isim tavanı sağlanır ve B 0,05'te kalır. Trend long ile carry short'un aynı coinde birleşmesi olağan bir durum (yüksek pozitif funding çoğu zaman yukarı trendle gelir). Bu yüzden şiddeti ORTA verdim: sonuç gereksiz küçültme, look-ahead ya da sayısal bozulma değil.",
+     "kanit": "<ev>/.claude/jobs/c8cce3b6/tmp/wf_dogrula_cozucu_4_0.py çıktısı:\nbaglayan ('isim', 'S2', 'kappa', 'global') kappa 0.0 global 0.8571428571428572\nB net: 0.042857142857142864 (ham 0.05, hiçbir tavana bağlı değil)  A net 0.06\nson S1 0.072 S2 0.09\nalternatif kappa 0.8 + yalnız A trendi adım-1 kuralı: S1 0.133 S2 0.182 brut 0.524 isim ok True B net 0.05\n(c_A=0.7 sabitken κ taraması)\nk 0.0 S1 0.084 S2 0.09 brut 0.27 A net 0.07 isim ok False   <- şoklar sağlanıyor, yalnız isim başarısız\nk 0.5 S1 0.1155 S2 0.1475 A net 0.065 isim ok False\nk 0.8 S1 0.1344 S2 0.182 A net 0.062 isim ok False\nk 0.9 S1 0.1407 S2 0.1935 A net 0.061 isim ok False\nk 1.0 S1 0.147 S2 0.205 A net 0.06 isim ok True     <- yalnız S2 ihlali\nKod: net_cozucu.py:144-145 (hepsi_ok içinde isim_ok), 150/160-161 (hepsi_ok(0) yanlış -> kappa=0), 166-180 (isim adayıyla global)."
+    },
+    {
+     "gercek": false,
+     "siddet": "YOK",
+     "gerekce": "Senaryo koşuyor ve iddia edilen sayılar çıkıyor, ama bu belgeyle çelişmiyor. MIMARI §4.5 adım 3 şöyle diyor: \"En fazla 5 tur. İhlal sürerse carry bloğu κ^C ile küçültülür. Yine sürerse bütün net kitap tek katsayıyla küçülür.\" Adım 1 ise şöyle: \"tavanı aşan coinde trend bileşeni, net ağırlık tavana inene kadar küçültülür\". Adım 1 sıralamada κ'dan önce geliyor. Belge κ sonrasında adım 1'in yeniden çalıştırılmasını (κ ile trend kırpmasının ortak çözümünü) hiçbir yerde öngörmüyor. İddiacının önerdiği \"κ≈0,8 ve A'nın trendini yeniden kırp\" döngüsü belgede tanımlı değil, bir tasarım önerisi. Adım 6 da yeniden sınamada yalnız bant kapatmayı öngörüyor, trendi yeniden kırpmayı değil. κ koşuluna isim tavanının eklenmesi, görevde \"zaten işlenmiş\" diye verilen \"κ'nın isim tavanını bozması\" düzeltmesinin kendisi. Bu bulgu o düzeltmenin tutucu sonucunun yeniden raporlanması oluyor. Y11 (\"κ = 0 yetmezse bütün serbest net kitap tek katsayıyla küçülür\") belge metniyle (\"Yine sürerse bütün net kitap tek katsayıyla\") örtüşüyor ve kendi içinde tutarlı. İsim tavanı κ=0'da da ihlal olduğu için \"yine sürer\" koşulu harfiyen sağlanıyor. Çıkan kitap bütün tavanları sağlıyor (S1 0,072, S2 0,09, isim 0,06). Yani ortada geçersiz ya da look-ahead içeren bir sonuç yok, yalnız gerekenden fazla küçültme var. Bu da optimalite/tasarım tercihi, doğruluk hatası değil.",
+     "kanit": "wf_dogrula_cozucu_4_1.py (iddiacının kurulumu: A trend 0,10 / carry -0,01; 23 carry short -0,01; 10 carry long +0,01; 5 sabit -0,03; B trend 0,05) çıktısı: baglayan=('isim','S2','kappa','global'), kappa=0.0, global=0.857, w_A=0.06, w_B=0.04286, c2=0.0, turlar=5, s1_kayip=0.072, s2_kayip=0.09. Yani sonuç tüm tavanlar içinde. Kod: net_cozucu.py:140-161 (hepsi_ok isim_ok'u içeriyor; hepsi_ok(0) yanlış olunca kappa=0), :163-180 (global son çare). Belge §4.5 adım 3: \"İhlal sürerse carry bloğu κ^C ile küçültülür. Yine sürerse bütün net kitap tek katsayıyla küçülür.\" κ sonrası adım 1'in yeniden uygulanmasına dair bir hüküm yok."
+    }
+   ]
+  }
+ ],
+ "reddedilen": [
+  {
+   "kaynak": "codex",
+   "baslik": "Reduce-only sonrasında toplam risk yeniden aşılabiliyor",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 287,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "İç aralıkta geçerli κ bulunmasına rağmen carry sıfırlanıyor",
+   "dosya": "AKTIF_MODEL/v8/motor/net_cozucu.py",
+   "satir": 150,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "K13 sanal trende uygulanınca düşük hacimde gerçek giriş oluşuyor",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 217,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Çözücü ve son denetim toleransları geçerli kararı durduruyor",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 235,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Sanal funding dolgusu gerçek net pozisyona bağımlı",
+   "dosya": "AKTIF_MODEL/v8/motor/ayristirma.py",
+   "satir": 134,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Miktar içeren düzeltmede NAV özdeşliği hâlâ bozuluyor",
+   "dosya": "AKTIF_MODEL/v8/motor/ayristirma.py",
+   "satir": 167,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "İşlem dışı mevcut long, haftalık funding tabanını atlıyor",
+   "dosya": "AKTIF_MODEL/v8/motor/carry.py",
+   "satir": 284,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Evren histerezisi pozisyon sahipliğine indirgenmiş",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 106,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "V60 düşüşü belge dışı zorunlu carry çıkışı getiriyor",
+   "dosya": "AKTIF_MODEL/v8/motor/carry.py",
+   "satir": 110,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Ortak matrisin carry aday kapsamı hafta içinde daralıyor",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 110,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "Kaydedilen κ, belgede tanımlanan sanal miktarı üretmiyor",
+   "dosya": "AKTIF_MODEL/v8/motor/hedef_b.py",
+   "satir": 304,
+   "gerekce": []
+  },
+  {
+   "kaynak": "codex",
+   "baslik": "λ günlükten carry durumuna geri kurulmuyor",
+   "dosya": "AKTIF_MODEL/v8/motor/durum.py",
+   "satir": 169,
+   "gerekce": []
+  }
+ ],
+ "yorum_itirazlari": [
+  {
+   "ad": "codex",
+   "itirazlar": [
+    "Y1: itiraz — §6.1 giriş maliyetini sınırlayabilir; V60 düşüşünden zorunlu carry çıkışı türetilemez.",
+    "Y2: itiraz — Evren üyeliği ile pozisyon sahipliği farklıdır; orta dilimdeki mevcut adayların histerezisi kayboluyor.",
+    "Y3: kabul — Tam sayıya aşağı yuvarlama ve deterministik eşitlik çözümü, %30 kesiminin makul tamamlamasıdır.",
+    "Y4: itiraz — Eksik R30 için dolgu §4.2'de tanımlı değil; ayrıca eşitliklerde (m+1)/2 gerçek sıra medyanı olmayabilir: [2,2,2,4] için medyan 2, kodun dolgusu 2,5.",
+    "Y5: itiraz — Ortak tanımlı günlerde OLS uygundur; hesaplanamayan β̂ yerine 1 koymak §4.3'te tanımlanmamış ayrı bir hedge kuralıdır.",
+    "Y6: kabul — Genişlik indiriminin bütçe aşamasında, isim tavanlarından önce uygulanması §4.4 sırasıyla tutarlıdır.",
+    "Y7: itiraz — Gerçek pozisyonun sabit tutulması uygun; bunun haftalık long funding tabanını atlatması uygun değil.",
+    "Y8: kabul — İlk haftalık karar öncesinde carry'nin sıfır olması karar takvimiyle uyumludur.",
+    "Y9: itiraz — K8 net pozisyonu sabitler; sanal trendi ayrıca değişmez tutmak, carry değiştiğinde §4.7'deki hedef=sanal trend+sanal carry eşitliğini korumuyor.",
+    "Y10: itiraz — K13'ün yalnız sanal trende uygulanması gerçek düşük hacimli girişe izin veriyor; reduce-only sonrasında T4-d de yeniden sınanmıyor.",
+    "Y11: itiraz — κ=0'ın uygunsuz olması, uygun bir iç aralık bulunmadığını göstermez; doğrulanan κ=0,8 örneği mevcut son-çare geçişini çürütüyor."
+   ]
+  },
+  {
+   "ad": "carry",
+   "itirazlar": [
+    "carry.py satır 17-18 docstring'i ('Delta gap basindaki 30 gunluk pencereden (tespit anindaki pencereden en fazla 1,5*8 saat farkli; sayim icin yeterli)') kendi içinde tutarsız: pencere kayması 1,5·Δ_a kadar olabilir (Δ_a 8h ile sınırlı değil) ve karşı örnekte sayım 2'den 1'e düşüyor; 'yeterli' iddiası sağlanmıyor.",
+    "Y7 yalnız miktarın korunmasını tanımlar; kod β'yı da önceki haftadan taşıyor. Bu, §4.3'teki 'β Pazartesi kararında hesaplanır' kuralını Y7'nin kapsamı dışına genişletiyor."
+   ]
+  },
+  {
+   "ad": "cozucu",
+   "itirazlar": [
+    "Y10: K13'ü çözücüden sonra ve yeniden sınamasız trend bileşenine uygulamak (hedef_b.py:214-217), trend long ile carry short içeren isimlerde net kitabı büyütüyor. Bu, §3.5 ve §4.5'teki 'yalnız küçültür' ilkesiyle ve adım 6'nın ihlali giderebilme varsayımıyla çelişiyor. Y10 ayrıca reduce-only'yi net kitaba T4-d'den sonra yerleştiriyor; A'daki sıra ise reduce-only'den sonra T4-d.",
+    "Y11: 'κ = 0 yetmezse son çare' kuralı, hepsi_ok ölçütüne isim tavanı eklendiği için (Codex 4. tur düzeltmesi) κ'nın kendi yarattığı isim ihlalinde de tetikleniyor. Sonuç olarak carry tamamen kapanıyor ve bütün kitap küçülüyor. Bunun yerine adım 1'in o isme yeniden uygulanması gerekirdi (bulgu 5)."
+   ]
+  },
+  {
+   "ad": "ayristirma",
+   "itirazlar": [
+    "Y9 kendi içinde gerilimli: çözücüde trend bileşeni 'w0 − κ·w^C' sayılıyor, ama sanal trend miktarı 'değişmez' (hedef_b.py:298-300 eski değeri tutuyor), sanal carry ise κ ile her gün değişiyor (hedef_b.py:303-306). Bu yüzden işlem dışı carry isminde e_i = q − q^T,v − q^C,v her gün κ değişimi kadar sıfırdan farklı oluyor. Belge §4.7 icra artığının 'yalnız lot, katılım ve tavan yeniden sınamasından' doğduğunu söylüyor. Yorum bu kaynağı eklediği için belgede açıkça yazılmalı. Hata olarak raporlanmadı."
+   ]
+  },
+  {
+   "ad": "durum_parite",
+   "itirazlar": [
+    "Y9 kendi içinde gevşek: 'trend bileşeni = w0 − κ·w^C (çözücüde değişmez), sanal trend miktarı değişmez' diyor. Kod ise işlem dışı coinde sanal_trend'i önceki değerde tutuyor (hedef_b.py:298-300), sanal_carry'yi ise κ·q^C* ile yeniden yazıyor (satır 303-306). Bu yüzden işlem dışı coinde sanal trend + sanal carry ≠ net hedef. Fark icra artığına gidiyor ve belgelenmiş sayılabilir. Ama BTC işlem dışı olduğunda net kitaptaki hedge donuyor, carry altları ise işlem görmeye devam ediyor. Karşı örnek (wf_durum_parite_b1.py btc_eksik, gün 102): sanal hedge 0,00222 NAV, net kitaba giren hedge 0,00181 NAV (önceki günden kalan). Blok bu gün beta-nötr değil (§4.5 adım 4: 'blok beta-nötr kalır'). Y9 bu durumu açıkça ele almıyor; teknik hata değil, belge boşluğu olarak not edilmeli.",
+    "Y7 'mevcut miktarı korunur (sabit)' diyor. Kod ise tutulan işlem dışı ismi §4.4 adım 6'daki yeniden nötrlemeye sokuyor ve ağır bacaktaysa λ ile küçültüyor. wf_durum_parite_b5.py'de A12 gün 99'da -36,987, gün 100'de (işlem dışı) -31,511. Belgeye (§4.4 adım 6: 'ağır bacağın bütün isimleri') uyan davranış kodunki. Değişen Y7 metni olmalı: 'korunur' değil 'yeni seçilmez, banttan geçmez, λ uygulanır' denmeli.",
+    "Y10 gereği reduce-only günü Pazartesi'ye denk gelirse haftalık q^C* yine de güncelleniyor ve durum'a yazılıyor; net kitap ise w0'a kıstırılıyor. Belge (§2.6 'yeni risk yok') bu kesişimi tanımlamıyor. Yorum geçerli ama bir sonraki günün trend bandı referansı (önceki sanal trend) ile gerçek pozisyon arasındaki farkın kalıcılaştığı açıkça yazılmalı."
+   ]
+  }
+ ],
+ "test_kor_noktalari": [
+  {
+   "ad": "codex",
+   "maddeler": [
+    "S1/S2/S4'ün birlikte bağladığı, sabit isimler ve farklı L değerleri içeren çözücü→nihai hedef testleri eksik.",
+    "Reduce-only sonrasındaki nihai risk ve sanal/net eşitliği sınanmıyor; mevcut eşitlik testi reduce-only günlerini ve sabit isimleri açıkça atlıyor.",
+    "Pozisyonsuz mevcut aday, V30/V60 ayrışması ve işlem dışı mevcut long'un haftalık funding tabanı kapsam dışı.",
+    "Net pozisyon sıfırken sanal funding dolgusu ve miktar+nakit düzeltmesi yok; yalnız toplam özdeşlik bacak muhasebesini doğrulamıyor.",
+    "T4-c bağladığında yayımlanan κ/miktar özdeşliği, λ'nın durumdan yeniden kurulması ve hafta içi ortak matris kapsamı sınanmıyor."
+   ]
+  },
+  {
+   "ad": "carry",
+   "maddeler": [
+    "test_iki_eksik_olay_sayilir yalnız Δ'nın gap başında ve tespit anında aynı olduğu durumu sınıyor; 30 günlük pencerenin kenarından eski bir uzun aralığın düştüğü (Δ_h < Δ_a) durumu için carry sayımı ile funding.py tespiti arasında eşleşme testi yok.",
+    "Pazartesi işlem dışı tutulan carry isminin (sabit_mevcut) β'sı ve hedge'e etkisi için test yok.",
+    "carry_aktif=False (BTC fiyatı yok) iken Pazartesi/hafta içi carry_q'nun silinmesi test edilmiyor.",
+    "Pencere dışında başlayıp içinde tespit edilen olayın (h > bas sınırı) ve listelemeden ilk funding kaydına kadarki boşluğun sayımı test edilmiyor."
+   ]
+  },
+  {
+   "ad": "cozucu",
+   "maddeler": [
+    "B bütünleşik testleri yalnız L=1'de koşuyor ve orada S1/S2 hiç bağlamıyor. Fikstürde L=4 ile S1 bağlayınca koşu HedefHatasi ile duruyor; bunu yakalayan test yok.",
+    "Bant kapatma (adım 6) için, trend işareti ile net işaretinin ayrıştığı bir test yok (trend long, carry short, net short).",
+    "K13 (V60<20M) ile carry bileşeninin aynı isimde bulunduğu bir B testi yok.",
+    "Reduce-only günlerinde nihai w_yildiz için T4-d denetimi yapan bir test yok (A ile sıra paritesi de sınanmıyor).",
+    "net_coz'un κ adımının tekdüze olmadığı durum için (κ küçülünce isim tavanının aşılması, κ=0 ile global) sayısal test yok.",
+    "net_coz çıktısının hedef_b.ihlaller() ile aynı toleransla sınandığını doğrulayan bir birim test yok."
+   ]
+  },
+  {
+   "ad": "ayristirma",
+   "maddeler": [
+    "ayristir'da funding_dolgu ve ters_kayit bacak dağılımı hiç sınanmıyor: carry_senaryo_verisi'nde eksik funding yok, testlerde de dolgu veya ters kayıt geçen ayrıştırma testi yok.",
+    "Delist 'uzlasma' kaydının ayrıştırmadaki etkisi (q_once sıfırlama, uzlasma_farki'nın icra artığına ve s^C bölüşümüne düşmesi) test edilmiyor.",
+    "maliyet_k ≠ 1 ile ayristir hiç çağrılmıyor; günlükteki k ile ayrıştırmadaki k'nın uyumu sınanmıyor.",
+    "K13 (V60 < 20M) durumundaki bir coinin sanal trend bacağı ayrıştırmada test edilmiyor; bantta tutulan bacakta 1 ulp'lik Δq çöküşü yakalanmıyor.",
+    "Sıfır/sıfır s^C kuralı yalnız sc_paylari birim testinde (test_v8_carry.py:186) var; ayristir üzerinden [D 01:00, D+1 01:00) zaman damgasıyla uçtan uca uygulanışı (ör. A13 maske çıkışı sonrası artığın carry'ye düşmesi) doğrulanmıyor.",
+    "Güncelleme saatinde barı olmayan coinde (acilis None) sanal bacak değişiminin maliyetsiz geçmesi test edilmiyor."
+   ]
+  },
+  {
+   "ad": "durum_parite",
+   "maddeler": [
+    "A yolu Slice 3 öncesiyle aynı: wf_durum_parite_a.py, arşiv motoru (_arsiv/V8_MOTOR_SLICE3_20260928_01) ile yeni motoru senaryo_verisi ve carry_senaryo_verisi üzerinde mimari='A' ile koştu. Son hash'ler birebir aynı çıktı (b21a48ce…, c6fd9e49…), son NAV'lar da aynı. Artımlı durum ile durum_turet B'de de eşit (fark yalnız son 'nav' kaydının T+1h damgasından geliyor). B'nin trend birim kitabı ise fikstürde A'nınkiyle birebir aynı (PSD kırpması yokken).",
+    "BTC'nin işlem dışı olduğu gün (BTC [t-1h, t) barı yok) test edilmiyor. Net kitaptaki hedge donuyor, altlar işlem görüyor; blokta beta maruziyeti oluşuyor. Bu davranış ve Y9 ile ilişkisi test edilmeli.",
+    "Tutulan carry isminin Pazartesi işlem dışı olduğu Y7 yolu (sabit_mevcut + λ ile küçülme) bütünleşik testte yok. Duman koşusu çalışıyor (wf_durum_parite_b5.py).",
+    "Canlı yol için günlüğün kalıcı JSON'dan yeniden yüklenmesi (OlayGunlugu.kayitlardan + json.loads) ile B karar paritesi test edilmiyor. carry blokları iç içe sözlükler olduğundan bu kontrol değerli olur.",
+    "Hiç BTC verisi olmayan B koşusu test edilmiyor (çalışıyor, carry 0). BTC görünümden kalkarsa carry_q sessizce silinir (hedef_b.py:184); pratikte görünüm dilimlemesinde oluşmaz ama test yok.",
+    "Reduce-only (borsa çapı boşluk) günü Pazartesi'ye denk gelen B senaryosu yok. PariteBTest reduce-only günlerini net = sanal trend + sanal carry sınamasından da atlıyor.",
+    "t0'ın Pazartesi olduğu B koşusu ve ilk Pazartesi'den önce kaçırılan karar senaryosu yok.",
+    "Delist edilip 30 gün sonra uzlaşan coin B'de test edilmiyor: coin kalıcı olarak işlem dışı olduğu için sanal_trend önceki değerinde süresiz kalıyor ve coin her kararda coinler kümesinde taşınıyor. Hesabı bozmuyor (fiyat sabit), ama s^C ve icra artığı satırındaki etkisi sınanmıyor.",
+    "Aylık evren seçimi + Pazartesi + hafta içi çıkışın aynı gün olduğu B fikstürü (§5.6 'aylık + haftalık + günlük aynı gün') yok."
+   ]
+  }
+ ]
+}

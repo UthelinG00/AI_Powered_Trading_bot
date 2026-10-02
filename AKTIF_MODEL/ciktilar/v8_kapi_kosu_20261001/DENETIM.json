@@ -1,0 +1,51 @@
+{
+ "V": {
+  "V1": true,
+  "V2": true,
+  "V3": true,
+  "V4a": true,
+  "V4b": true,
+  "V5": true,
+  "V6": true
+ },
+ "dolgu_sayilari": {
+  "C": {
+   "funding": 99933,
+   "funding_dolgu": 2,
+   "ters_kayit": 1
+  },
+  "T": {
+   "funding": 45808
+  }
+ },
+ "esas_ihlal": [],
+ "kosular": [
+  "ana",
+  "delist50",
+  "delist90",
+  "k8",
+  "mc2",
+  "mc3"
+ ],
+ "teknik_ihlal": [],
+ "v1": {
+  "gecti": true,
+  "rapor": "test_20261001T184830Z",
+  "sha256": "6ba62a9c3bd75d3c029cdce0c5aadc4b7ebeb160423b956a5240d98e2a7a7666",
+  "test_dosyasi": 58,
+  "toplam": 58
+ },
+ "v5_gun": {
+  "ana": true,
+  "delist50": true,
+  "delist90": true,
+  "k8": true,
+  "mc2": true,
+  "mc3": true
+ },
+ "veri_raporu": {
+  "dosya_sayisi": 8345,
+  "sembol": 122,
+  "veri_kimligi": "5907a89bbe56adc0c65a80ad06c9e852b4e7bb58c40b000cab7615e7ddfd23f7"
+ }
+}

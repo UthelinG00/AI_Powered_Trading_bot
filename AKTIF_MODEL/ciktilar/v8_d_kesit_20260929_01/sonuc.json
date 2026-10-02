@@ -1,0 +1,107 @@
+{
+ "onkayit": "ONKAYIT.md",
+ "yukleme": {
+  "veri_kimligi": "5907a89bbe56adc0c65a80ad06c9e852b4e7bb58c40b000cab7615e7ddfd23f7",
+  "dosya_sayisi": 8345,
+  "sembol": 122,
+  "bar_serisi": 122,
+  "funding_serisi": 122,
+  "sure_sn": 101.4,
+  "toplamlar": {
+   "funding.aralik_bilinmiyor": 0,
+   "funding.donem_disi": 0,
+   "funding.gecersiz_zaman": 0,
+   "funding.mikrosaniye": 0,
+   "funding.oran_gecersiz": 0,
+   "funding.satir": 410950,
+   "funding.tekrar": 0,
+   "funding.yuvarlama_cakismasi": 0,
+   "klines.donem_disi": 0,
+   "klines.gecersiz_ohlc": 0,
+   "klines.gecersiz_zaman": 0,
+   "klines.mikrosaniye": 0,
+   "klines.satir": 3135362,
+   "klines.sayisal_gecersiz": 0,
+   "klines.tekrar": 0
+  }
+ },
+ "kosular": [
+  {
+   "mimari": "A",
+   "istisna": null,
+   "sure_kos_sn": 6.0,
+   "zincir_dogru": true,
+   "kayit_sayisi": 421,
+   "kayit_turleri": {
+    "baslangic": 1,
+    "dolum": 53,
+    "emir_niyeti": 53,
+    "funding": 300,
+    "karar": 7,
+    "nav": 7
+   },
+   "evren_boyutu": {
+    "0": 15,
+    "1": 15,
+    "2": 15,
+    "3": 15,
+    "4": 15,
+    "5": 15,
+    "6": 15
+   },
+   "son_hash": "a9a13e35bd365b1196039b77c85dcc3165ed01074be23d51542fae8f6e8eb7ba",
+   "degismez_ihlal_gunleri": [],
+   "parite": {
+    "0": true,
+    "1": true,
+    "6": true
+   }
+  },
+  {
+   "mimari": "B",
+   "istisna": null,
+   "sure_kos_sn": 7.1,
+   "zincir_dogru": true,
+   "kayit_sayisi": 673,
+   "kayit_turleri": {
+    "baslangic": 1,
+    "dolum": 69,
+    "emir_niyeti": 68,
+    "funding": 521,
+    "karar": 7,
+    "nav": 7
+   },
+   "evren_boyutu": {
+    "0": 15,
+    "1": 15,
+    "2": 15,
+    "3": 15,
+    "4": 15,
+    "5": 15,
+    "6": 15
+   },
+   "son_hash": "1a00f0aecd331a10fb7ceab823e8bf70cbf20d1427963c107cf16b7a00b5182b",
+   "carry_n_c": {
+    "1": 36
+   },
+   "carry_isim_sayisi": {
+    "0": 0,
+    "1": 17,
+    "2": 17,
+    "3": 17,
+    "4": 17,
+    "5": 17,
+    "6": 17
+   },
+   "degismez_ihlal_gunleri": [],
+   "parite": {
+    "0": true,
+    "1": true,
+    "6": true
+   },
+   "ayristirma_ozdeslik_max_hata": 1.1786482900788542e-10,
+   "ayristirma_ozdeslik_esik": 0.001,
+   "sure_ayristirma_sn": 2.9
+  }
+ ]
+}

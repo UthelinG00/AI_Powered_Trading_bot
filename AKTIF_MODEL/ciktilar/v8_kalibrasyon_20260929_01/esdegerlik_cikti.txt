@@ -1,0 +1,4 @@
+d2_a000_y001_A_birincil ayni
+d2_a000_y001_B_birincil ayni
+d2_a000_y001_B_x2 ayni
+d2_a000_y001_A_null_p001 ayni

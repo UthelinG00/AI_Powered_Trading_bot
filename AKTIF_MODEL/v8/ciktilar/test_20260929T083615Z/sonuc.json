@@ -1,0 +1,109 @@
+{
+ "motor_kimligi": "875596746d9a7fabba98d264a7712c6396db1144e66040d15ddc463e2596e062",
+ "toplam": 17,
+ "basarisiz": 0,
+ "sonuclar": {
+  "test_v8_bant.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_boyutlama.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_carry.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_emir.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_funding.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_geri_test.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_gunluk_durum.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_har.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_har_motor.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_hijyen_evren.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_karar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_katilim_maliyet.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_mimari_b.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_risk.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_sinyal.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_tavanlar.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  },
+  "test_v8_veri_yukleyici.py": {
+   "exit_code": 0,
+   "gecti": true,
+   "stdout_son_satirlar": [],
+   "stderr_son_satirlar": []
+  }
+ }
+}

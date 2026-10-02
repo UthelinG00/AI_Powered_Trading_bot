@@ -1,0 +1,71 @@
+{
+ "butunluk": {
+  "birim": 5140,
+  "eksik": 0,
+  "bozuk": 0,
+  "ilk_eksik": [],
+  "ilk_bozuk": []
+ },
+ "kimlik": {
+  "dosya": 5140,
+  "farkli_kimlik": 1,
+  "dondurmayla_ayni": true,
+  "kimlikler": {
+   "kod": "c442f5ba779c36411317662dc8422a1a296a5a1d1b6b71369eee6f15356c69e0",
+   "motor": "7e2320f4073164c15d298be40a713caaf234130c6cd94f6d45e10a650b7b597f",
+   "parametre": "80c67909654742210e318b1b4e37da77edf9f007a35f26c61faf600100700a6f",
+   "ortam": "python 3.12.14; numpy 2.5.1"
+  }
+ },
+ "kanit": {
+  "betik_sha256": "0d2ee1a23e536fe1d706b3bcfb0a2a5b09932c62e408c4eaece9a5b543d8a228",
+  "kod_dondurma_sha256": "0a6ab6b4b5802b5a8d8b9b6bc2e380b195c2ec09b3fbe47e29de5e446bcf521b",
+  "har_sonuc_sha256": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+  "kimlikler": {
+   "kod": "c442f5ba779c36411317662dc8422a1a296a5a1d1b6b71369eee6f15356c69e0",
+   "motor": "7e2320f4073164c15d298be40a713caaf234130c6cd94f6d45e10a650b7b597f",
+   "parametre": "80c67909654742210e318b1b4e37da77edf9f007a35f26c61faf600100700a6f",
+   "ortam": "python 3.12.14; numpy 2.5.1"
+  },
+  "kaynak": {
+   "is_listesi_sha256": "ae68a5eb3051a52af814bce0da06a57da47f49a1e4cac066172b48e3992e6e8f",
+   "ek_liste_sha256": "7385b3b41c2874b4d486e366d9e2161f293f8e8bb712c3cfdb2ccdb2b2d72569",
+   "birim_dosyalari": {
+    "dosya": 5140,
+    "birlesik_sha256": "43e421d31064f055de2cf4d389294acdc0df9772169841be7a31dd6b24450318"
+   }
+  }
+ },
+ "secilen": [
+  "d2_a000_y089_A_birincil",
+  "d2_a000_y038_B_birincil",
+  "d2_a000_y058_A_x2",
+  "d2_a000_y050_B_x2",
+  "d2_a000_y070_A_x3",
+  "d2_a000_y084_B_x3",
+  "d2_a000_y020_A_cikarma_c21",
+  "d2_a000_y080_B_cikarma_c18",
+  "d2_a003_y002_A_null_p017",
+  "d2_a001_y001_A_null_p002"
+ ],
+ "kosu": {
+  "bitmis": 10,
+  "bu_kosuda": 10,
+  "kalan": 0,
+  "liste_sha": "aaa24837a6af27c19d9d87e1825e145fe42da3b22b3cccd5a3fd48b35d0172e3",
+  "sure_sn": 1077.3
+ },
+ "ayni": {
+  "d2_a000_y089_A_birincil.json": true,
+  "d2_a000_y038_B_birincil.json": true,
+  "d2_a000_y058_A_x2.json": true,
+  "d2_a000_y050_B_x2.json": true,
+  "d2_a000_y070_A_x3.json": true,
+  "d2_a000_y084_B_x3.json": true,
+  "d2_a000_y020_A_cikarma_c21.json": true,
+  "d2_a000_y080_B_cikarma_c18.json": true,
+  "d2_a003_y002_A_null_p017.json": true,
+  "d2_a001_y001_A_null_p002.json": true
+ },
+ "gecti": true
+}

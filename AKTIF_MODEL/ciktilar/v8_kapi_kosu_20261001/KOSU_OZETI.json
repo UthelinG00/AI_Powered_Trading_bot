@@ -1,0 +1,77 @@
+{
+ "baslangic_utc": "2026-10-01T19:07:09Z",
+ "bitis_utc": "2026-10-01T20:27:32Z",
+ "hash": {
+  "DENETIM.json": "d9f1124d9efe09a24b2438170025609e98e01953b4b4a3c4d42b2ff0f3c3c4df",
+  "HUKUM.json": "745c6a63e26061481c1b2c7967ecdc5d21368cc8ca83d789ba6199a2fa393eed"
+ },
+ "kimlikler": {
+  "kilit_git": {
+   "commit": "71cf576f50722a7ef7580ba03f757780014df40a",
+   "sha256": "bea874f342e4f182e00573b6a76645ee21620e35e7350bf9c0074f5185c2c700",
+   "uzak": "origin",
+   "uzak_dallar": [
+    "claude/codex-tasarimi-8f1481-rgo4yj",
+    "claude/v8-kapi-motor-502e"
+   ]
+  },
+  "kilit_zaman": "2026-10-01T19:05:42Z",
+  "kod": {
+   "adaptor": "503dd1ec7bc682c13e1ae89c7c61e6bd8d7380ca5c101e32cfadab40ddaad920",
+   "kalibrasyon": "5cee577f0a7285c51e150dd39e9d29bdd350bb86b1148a231aba4a6c04c2e26e",
+   "kapi": "05394a018cdaf4e4466836ab7cb80462e9fd5b48d0a7d61c1afb9c5d2dbc2ccf",
+   "kilit": "daafadbf2355b068f0af02bcfc1f58b1411015f39c3270b61132f82d55cc4334",
+   "motor": "db13ddad410748c65a82326b1a1fbf5872ec8c3dffc490219f77635aecabb63c"
+  },
+  "parametre": {
+   "har_sonuc": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+   "kapi": "55d131a0071605d10da733e4a99a5a905f97b6244fbe7b727942943040c7283d",
+   "varsayilan": "7fdcc8192caf48d292687cefa3c506bcd3ecf7a7bb1d28eab135702bf4df3fcf"
+  }
+ },
+ "kosular": {
+  "ana": {
+   "hash": {
+    "gunluk": "8d32ad08534a34bb9644b53c197ff43f69fb9b42716e1507407c39411a8cb1ab",
+    "nav": "8b8b30268c4161e974da75d0d19dece4de4d9b2bf0c2bec0cfd8506a847d88c1",
+    "trend_satirlari": "ccbb1ef2da85d360d4060e5dfcb1b119de7fd24f2ce43e9f0544e15b852eba39"
+   },
+   "sure_sn": 790.7
+  },
+  "delist50": {
+   "hash": {
+    "gunluk": "ee576c057aa785e152ba4f00960ed3b2b3033d653dfb6df7fca28171c2af1aa6",
+    "nav": "3253bca88cb51f20f5bc7d87ca3feed088cfc899c36263364c84596600810f88"
+   },
+   "sure_sn": 777.8
+  },
+  "delist90": {
+   "hash": {
+    "gunluk": "af2a91590e2c655ce4022cbb431f014324321668d9726eb13f9409c4eb865f1e",
+    "nav": "1001a3cf8b191496cd6734a6ee0a9a571c4faee1d6c896c6d5fb629ae96ae871"
+   },
+   "sure_sn": 839.8
+  },
+  "k8": {
+   "hash": {
+    "gunluk": "4232632e49005eaa8c510b306d2a307de2c022678d4fb0ab6c9d7741fde7b744",
+    "nav": "0d0bf55c9038037663e2881bbac51015a77a3a7fd443a738d538f5cb4679082f"
+   },
+   "sure_sn": 741.0
+  },
+  "mc2": {
+   "hash": {
+    "gunluk": "8f69f78fc05013fb395ff84b341b6072c9464595f0e55ccb643db478a553b73e",
+    "nav": "a87a00c45f62f8800874c47782d243f37ea6ee8fd4d5b2b7e713769cdeeb9cce"
+   },
+   "sure_sn": 802.9
+  },
+  "mc3": {
+   "hash": {
+    "gunluk": "8ba1b8c2fe860dc200dd479a855f152403e342d445e9968a63b6041dfb816d3e",
+    "nav": "d7c721739d7975fc8369d0a3c6cdc049d6c6975abc7f64e80923ff32bda30ad0"
+   },
+   "sure_sn": 817.9
+  }
+ }
+}

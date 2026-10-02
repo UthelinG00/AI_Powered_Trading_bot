@@ -1,0 +1,2937 @@
+{
+ "veri_kok": "<depo>\\AKTIF_MODEL\\ciktilar\\v8_veri_20260924_01",
+ "veri_kimligi": "5907a89bbe56adc0c65a80ad06c9e852b4e7bb58c40b000cab7615e7ddfd23f7",
+ "dosya_sayisi": 8345,
+ "semboller": [
+  "1000LUNCUSDT",
+  "1000SHIBUSDT",
+  "ACHUSDT",
+  "ADAUSDT",
+  "AGIXUSDT",
+  "AGLDUSDT",
+  "AMBUSDT",
+  "ANKRUSDT",
+  "API3USDT",
+  "ARKMUSDT",
+  "ARKUSDT",
+  "ARPAUSDT",
+  "ARUSDT",
+  "ATAUSDT",
+  "AVAXUSDT",
+  "BALUSDT",
+  "BCHUSDT",
+  "BICOUSDT",
+  "BLURUSDT",
+  "BLZUSDT",
+  "BNTUSDT",
+  "BNXUSDT",
+  "BTCSTUSDT",
+  "BTCUSDT",
+  "CELRUSDT",
+  "CKBUSDT",
+  "COMPUSDT",
+  "CTKUSDT",
+  "CTSIUSDT",
+  "CVCUSDT",
+  "DASHUSDT",
+  "DENTUSDT",
+  "DGBUSDT",
+  "DODOXUSDT",
+  "DOGEUSDT",
+  "DOTUSDT",
+  "DUSKUSDT",
+  "DYDXUSDT",
+  "EDUUSDT",
+  "EGLDUSDT",
+  "ENSUSDT",
+  "EOSUSDT",
+  "ETCUSDT",
+  "ETHUSDT",
+  "FETUSDT",
+  "FILUSDT",
+  "FLMUSDT",
+  "FTMUSDT",
+  "FTTUSDT",
+  "FXSUSDT",
+  "GALAUSDT",
+  "GLMRUSDT",
+  "GMTUSDT",
+  "GMXUSDT",
+  "GRTUSDT",
+  "HBARUSDT",
+  "HFTUSDT",
+  "HNTUSDT",
+  "HOOKUSDT",
+  "HOTUSDT",
+  "ICPUSDT",
+  "ICXUSDT",
+  "IDEXUSDT",
+  "IMXUSDT",
+  "INJUSDT",
+  "IOTAUSDT",
+  "IOTXUSDT",
+  "JASMYUSDT",
+  "JOEUSDT",
+  "KAVAUSDT",
+  "KEYUSDT",
+  "KNCUSDT",
+  "KSMUSDT",
+  "LINAUSDT",
+  "LITUSDT",
+  "LRCUSDT",
+  "MAGICUSDT",
+  "MANAUSDT",
+  "MATICUSDT",
+  "MAVUSDT",
+  "MKRUSDT",
+  "MTLUSDT",
+  "NEOUSDT",
+  "NKNUSDT",
+  "NMRUSDT",
+  "OCEANUSDT",
+  "OPUSDT",
+  "OXTUSDT",
+  "PEOPLEUSDT",
+  "PHBUSDT",
+  "QNTUSDT",
+  "RADUSDT",
+  "RAYUSDT",
+  "RDNTUSDT",
+  "RLCUSDT",
+  "RUNEUSDT",
+  "RVNUSDT",
+  "SANDUSDT",
+  "SEIUSDT",
+  "SFPUSDT",
+  "SNXUSDT",
+  "SOLUSDT",
+  "SPELLUSDT",
+  "SRMUSDT",
+  "SSVUSDT",
+  "STORJUSDT",
+  "SUIUSDT",
+  "THETAUSDT",
+  "TLMUSDT",
+  "TRBUSDT",
+  "TRUUSDT",
+  "TRXUSDT",
+  "UMAUSDT",
+  "UNFIUSDT",
+  "UNIUSDT",
+  "VETUSDT",
+  "WAVESUSDT",
+  "WOOUSDT",
+  "XMRUSDT",
+  "XRPUSDT",
+  "ZENUSDT",
+  "ZILUSDT"
+ ],
+ "coin": {
+  "1000LUNCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "1000SHIBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ACHUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ADAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "AGIXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "AGLDUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25630
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3205
+   }
+  },
+  "AMBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4007
+   }
+  },
+  "ANKRUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3633
+   }
+  },
+  "API3USDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 6854
+   }
+  },
+  "ARKMUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25654
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3208
+   }
+  },
+  "ARKUSDT": {
+   "klines_dosya": 34,
+   "funding_dosya": 34,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 24368
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4554
+   }
+  },
+  "ARPAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ARUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ATAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 35,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3161
+   }
+  },
+  "AVAXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "BALUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "BCHUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "BICOUSDT": {
+   "klines_dosya": 34,
+   "funding_dosya": 34,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 24156
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3020
+   }
+  },
+  "BLURUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3602
+   }
+  },
+  "BLZUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4081
+   }
+  },
+  "BNTUSDT": {
+   "klines_dosya": 35,
+   "funding_dosya": 35,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25332
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3170
+   }
+  },
+  "BNXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2548
+   }
+  },
+  "BTCSTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "BTCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "CELRUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "CKBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "COMPUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "CTKUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26294
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4567
+   }
+  },
+  "CTSIUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "CVCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26296
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 5061
+   }
+  },
+  "DASHUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "DENTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 34,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3077
+   }
+  },
+  "DGBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "DODOXUSDT": {
+   "klines_dosya": 35,
+   "funding_dosya": 35,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25380
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 6152
+   }
+  },
+  "DOGEUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "DOTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "DUSKUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3859
+   }
+  },
+  "DYDXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "EDUUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "EGLDUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ENSUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "EOSUSDT": {
+   "klines_dosya": 23,
+   "funding_dosya": 23,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 16570
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2103
+   }
+  },
+  "ETCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ETHUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "FETUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "FILUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "FLMUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 29,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 5469
+   }
+  },
+  "FTMUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "FTTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "FXSUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 31,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2762
+   }
+  },
+  "GALAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "GLMRUSDT": {
+   "klines_dosya": 34,
+   "funding_dosya": 22,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 24215
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 1899
+   }
+  },
+  "GMTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3894
+   }
+  },
+  "GMXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "GRTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "HBARUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "HFTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "HNTUSDT": {
+   "klines_dosya": 11,
+   "funding_dosya": 11,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 7976
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 1008
+   }
+  },
+  "HOOKUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 33,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2993
+   }
+  },
+  "HOTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ICPUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ICXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3655
+   }
+  },
+  "IDEXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "IMXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 6265
+   }
+  },
+  "INJUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "IOTAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "IOTXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "JASMYUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "JOEUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "KAVAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4734
+   }
+  },
+  "KEYUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "KNCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "KSMUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "LINAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "LITUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 31,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26287
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3293
+   }
+  },
+  "LRCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 33,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3708
+   }
+  },
+  "MAGICUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4593
+   }
+  },
+  "MANAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "MATICUSDT": {
+   "klines_dosya": 15,
+   "funding_dosya": 15,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 10522
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 1374
+   }
+  },
+  "MAVUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "MKRUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 27,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2402
+   }
+  },
+  "MTLUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "NEOUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "NKNUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 32,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3731
+   }
+  },
+  "NMRUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 6289
+   }
+  },
+  "OCEANUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "OPUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "OXTUSDT": {
+   "klines_dosya": 35,
+   "funding_dosya": 33,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25308
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2937
+   }
+  },
+  "PEOPLEUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "PHBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 35,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3161
+   }
+  },
+  "QNTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "RADUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "RAYUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2731
+   }
+  },
+  "RDNTUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 33,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3049
+   }
+  },
+  "RLCUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "RUNEUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "RVNUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 5232
+   }
+  },
+  "SANDUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "SEIUSDT": {
+   "klines_dosya": 35,
+   "funding_dosya": 35,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 25174
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3148
+   }
+  },
+  "SFPUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "SNXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "SOLUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "SPELLUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "SRMUSDT": {
+   "klines_dosya": 11,
+   "funding_dosya": 11,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 7976
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 1008
+   }
+  },
+  "SSVUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "STORJUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3974
+   }
+  },
+  "SUIUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "THETAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "TLMUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3671
+   }
+  },
+  "TRBUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 6265
+   }
+  },
+  "TRUUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 34,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3077
+   }
+  },
+  "TRXUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "UMAUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 5966
+   }
+  },
+  "UNFIUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 4007
+   }
+  },
+  "UNIUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "VETUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "WAVESUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 24,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 2159
+   }
+  },
+  "WOOUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "XMRUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "XRPUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ZENUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3288
+   }
+  },
+  "ZILUSDT": {
+   "klines_dosya": 36,
+   "funding_dosya": 36,
+   "klines": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "sayisal_gecersiz": 0,
+    "gecersiz_ohlc": 0,
+    "satir": 26304
+   },
+   "funding": {
+    "gecersiz_zaman": 0,
+    "mikrosaniye": 0,
+    "donem_disi": 0,
+    "tekrar": 0,
+    "oran_gecersiz": 0,
+    "yuvarlama_cakismasi": 0,
+    "aralik_bilinmiyor": 0,
+    "satir": 3900
+   }
+  }
+ }
+}

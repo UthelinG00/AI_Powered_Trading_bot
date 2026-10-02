@@ -1,0 +1,107 @@
+{
+ "banka_kos_sha256": "67a38c922fd78497f29c5fb1b96963d9580b05687dfae746bf6b52d3803fbd70",
+ "carry_kapisi": {
+  "denetim_sha256": "d9f1124d9efe09a24b2438170025609e98e01953b4b4a3c4d42b2ff0f3c3c4df",
+  "hukum_sha256": "745c6a63e26061481c1b2c7967ecdc5d21368cc8ca83d789ba6199a2fa393eed",
+  "karar": "A",
+  "kosu_ozeti_sha256": "b0f55185612103b61f3d5fe2d46844c3abd9dbed4a60cdeab439f90a7f3587f6",
+  "rapor_sha256": "31d396494bbb1ce8319c50c85b0be0bd4eddcef76a779483c1eec5eb6b5a5a06"
+ },
+ "d_dogrulama": {
+  "birim_sayisi": 539,
+  "damga_kok_sha256": "202ec96763a6795f73494aea714346f554c5ded958132f2bf0785bc03652fce8",
+  "denetim_ozeti_sha256": "dbba2fd9d8cf533ad355e33b60bd8a979f92fb952ce709131b92fdb7e1fc995d",
+  "is_listesi_sha256": "3bdf1ccc6ce037f25af210d3b854a4202bcd1ece862dd3f2f489c804e3938d9a",
+  "sonuc_damga_sha256": "440bb76751ec50318c1d24146b3f3e91a7f3d7a973becf718dc6cc4f12cb2ae2"
+ },
+ "deneme_defteri": {
+  "N_defter": 330,
+  "N_dondurma": 331,
+  "N_v8": 171,
+  "d_dogrulama_sayimi": 1,
+  "satir": 23,
+  "sha256": "5cb3ed2adecdb8e712cc203cd901ed1010ba88a5da6c4ac464e8bafd7d9bba8d"
+ },
+ "dsr": {
+  "N_kilit": 329,
+  "SR0_kilit": 0.04592098621519906,
+  "b2_turu": "B",
+  "d": 0.9,
+  "kaynak": "varsayim",
+  "sigma_sr_bag": 0.3
+ },
+ "git_commit_ust": "42a2dec4c4fb2156f581555de7f00655e8686f74",
+ "har_sonuc_sha256": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+ "kalibrasyon": {
+  "b7_kuantil": 0.95,
+  "kod_sha256": "9131f7b1e99c1b1b3d9f4c55f3853f710e0f864a5e15c19fa363a4e497ba69ac",
+  "kurallar": {
+   "N": 329,
+   "b2_bagli": true,
+   "b3_esik": 0.3,
+   "b4_esik": 0.3,
+   "d": 0.9,
+   "e_b10": null,
+   "e_b5": null,
+   "k_b6": 2,
+   "sigma_sr": 0.3
+  },
+  "toplama_sha256": "cd65c3cde9f163712b3666726fc6aeef07edfc4245c81422580717caa4b2a0ca"
+ },
+ "kilit_commit": "71cf576f50722a7ef7580ba03f757780014df40a",
+ "kilit_sha256": "bea874f342e4f182e00573b6a76645ee21620e35e7350bf9c0074f5185c2c700",
+ "kilit_yolu": "ciktilar/v8_kilit_20261001/KILIT.json",
+ "kullanici_onayi": "dondur",
+ "mimari": "A",
+ "motor_sha256": "db13ddad410748c65a82326b1a1fbf5872ec8c3dffc490219f77635aecabb63c",
+ "onkayit_sha256": "1ff19d1c06ea0aff2cad46e63b65751a49b182dcf35ba082e41c65a19c8a7301",
+ "ortam": {
+  "cryptography": "50.0.0",
+  "numpy": "2.5.1",
+  "pandas": "3.0.5",
+  "python": "3.12.14"
+ },
+ "parametreler_sha256": "7fdcc8192caf48d292687cefa3c506bcd3ecf7a7bb1d28eab135702bf4df3fcf",
+ "sifreleme_acik_anahtar": "age1n4ad8wszp30d6sk54c3sjfyq0pd3xq7py5dhcm8n9uxe9ne24qqq5ac4jl",
+ "stres_secenegi": "i",
+ "tahminci": {
+  "dondurulan": {
+   "beta": [
+    1.87170711869654,
+    0.22323371993771915,
+    -0.05079610500073497,
+    0.4417142448298703
+   ],
+   "n_egitim": 2140,
+   "son_pazartesi_ms": 1782086400000,
+   "son_pazartesi_yuruyen_s2_bilgi": 0.8799821192152635
+  },
+  "rapor_sha256": "e460d89d31c702cd0d14097809f505f385453ed75609d6c56631350371d1bebb",
+  "secim": "HAR",
+  "sonuc_sha256": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a"
+ },
+ "teknik_ekler": [
+  {
+   "commit": "4666db25cce22e1545639442fdbf33166cb936a1",
+   "sha256": "b6f6eaa438265bb4e68154d7aa3face34a05387fd55557df8f167875c69a2260",
+   "sira": 1,
+   "tur": "banka_oncesi"
+  }
+ ],
+ "tohum_banka": 1090996422,
+ "utc": "2026-10-02T15:51:44Z",
+ "uygulama_ek_sha256": "f3191c195532011ccb986b7739d863f97299a0e1d5072e6f179348adfe887e71",
+ "v1_guncel": {
+  "rapor": "test_20261002T144855Z",
+  "sha256": "e1900112103b2572e70a9cfa7f72d190e23d9fe86d4d84391dc2d2bc9e9a5d26",
+  "test_dosyasi": 59,
+  "toplam": 59
+ },
+ "v1_kilit": {
+  "rapor": "test_20261002T144855Z",
+  "sha256": "e1900112103b2572e70a9cfa7f72d190e23d9fe86d4d84391dc2d2bc9e9a5d26",
+  "test_dosyasi": 59,
+  "toplam": 59
+ },
+ "veri_denetim_sha256": "de147f3a3cf8fe416523a2ef4cc18d9de5f9488c08c428cb75ff14640647e3d0"
+}

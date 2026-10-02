@@ -1,0 +1,70 @@
+{
+ "denetim": {
+  "birim_sayisi": true,
+  "dondurmayla_ayni": true,
+  "dosyalar_ayni": true,
+  "duman_sonuc_gecti": true,
+  "ek_liste_ayni": true,
+  "har_dondurmayla_ayni": true,
+  "tek_kimlik": true
+ },
+ "dosya_sha256": {
+  "d2_a000_y001_A_birincil.json": "887716ce7350182829acf80c8284fb05cba62fc98f49d816febe341301d1f843",
+  "d2_a000_y001_A_cikarma_c03.json": "c96cd7adbfc572bfdfef22412efb7df4a667d9d452e8637bb7203e531d75790b",
+  "d2_a000_y001_A_cikarma_c06.json": "9eef51daae1586f9c6be7612b271113f9020197b03724725aaa408d73b59fd78",
+  "d2_a000_y001_A_cikarma_c07.json": "2ce86430b921dbdd6131ec0ee4b87786880f538bca609978b0ae0cefebeb2e77",
+  "d2_a000_y001_A_cikarma_c09.json": "e3a63ff452fb1dc6f917eb74b7664b1ed933e94b8a2ddf89e1f17f7fc7cea2ad",
+  "d2_a000_y001_A_cikarma_c11.json": "4a476cf7317d4fbe131f006dd7f6f916f9f4274af16c326c098bdddc98c60541",
+  "d2_a000_y001_A_cikarma_c12.json": "0282e8cb02a857ecc4695d3fd25355047fbf1766126823a705d8f338401ba1f2",
+  "d2_a000_y001_A_cikarma_c20.json": "35c786c220162d510eedfeaa0f189f2ae2eed427bd140ed9f1df84366f21a5de",
+  "d2_a000_y001_A_cikarma_c23.json": "9fad2c474aa71012f73aa0378f9517c6121d2ed9e0635b74bf38394d740dc85c",
+  "d2_a000_y001_A_cikarma_c26.json": "0a8b222972645d8157bb0a9c835f3a29ed2e981bccffc90b74009cfae6a8bb9c",
+  "d2_a000_y001_A_cikarma_c29.json": "a1982b62e3e691b6d235526b7bac05fc4f7cb64ee2f8903fbe05cc3682a31cc7",
+  "d2_a000_y001_A_null_p001.json": "6e6012db9f8c04907b10dcf7ec13ea966ae22229d07d247207bc937a3ef8fef5",
+  "d2_a000_y001_A_null_p002.json": "b162bd724d2d429fe899cb52e2b28a7ef357ff9fa423ee2f7c2361a0b71e3c7d",
+  "d2_a000_y001_A_x2.json": "552cd0e81c40c5e101134f3b36ddbd13f36601fa919acbac64c4c79b4ccc0561",
+  "d2_a000_y001_A_x3.json": "e858562347e86e5f00e84e259992425b416bf902b2af136f8923710da9c52160",
+  "d2_a000_y001_B_birincil.json": "9e287b6ce4feae4a1beabc522cc4c5d8e57a9a2c9363bf854401e2df7aea7f00",
+  "d2_a000_y001_B_cikarma_c03.json": "f002dec37d14d6b059fee10cf682ed181421678cd4343504afb1fe05e759aa00",
+  "d2_a000_y001_B_cikarma_c04.json": "568413a36204297d23c1b50f8be288840b3d9a26fada38b713224ee71b93715f",
+  "d2_a000_y001_B_cikarma_c05.json": "7e9c86b91d0588157fc1ab15c147256968623461b7d566a7f2a72a4761394187",
+  "d2_a000_y001_B_cikarma_c11.json": "4fbfd58f738438996df1a4c3a568a89fa1aefdf2bea4b708d3f0f22fafe501b4",
+  "d2_a000_y001_B_cikarma_c12.json": "2f0401d43aa2141a67926658498af0a5b00e3b7c7b7580bec69be4f6079ddfe3",
+  "d2_a000_y001_B_cikarma_c15.json": "04cc37be1fe013af37840ebeb538cf5b73e6d8da29912d01da85a1fb3e005326",
+  "d2_a000_y001_B_cikarma_c22.json": "b64427819acd390e09b24965efe4924088739a4b78b1c1a750a8f695ac07396f",
+  "d2_a000_y001_B_cikarma_c23.json": "77a7caa59c6eb68e6e32bea75147dc3f1b04764f4979d8f1a6d990eb69d1d8e4",
+  "d2_a000_y001_B_cikarma_c26.json": "1a9b4ab979eca650f8c31610be9b4bc29bb425350d2b7780b2e9a14e8f66a40e",
+  "d2_a000_y001_B_cikarma_c29.json": "b9891a904d841af2b1ce9bb4c193480ea48b364d05af4263ba715a263aae474e",
+  "d2_a000_y001_B_x2.json": "383608febadcc46c6b1657ba23489f1bd0c6879b3896c4d51d49fb33b1c86a5b",
+  "d2_a000_y001_B_x3.json": "ac5179f8c4030ab4b060a15e72e22b44f1122d304bf45a64ebf10cb1fa414a09"
+ },
+ "gecti": true,
+ "kanit": {
+  "betik_sha256": "5f47af41f373da78cc6c995608c6d1292f0500fb9fd0ffd6e496b7c5bf795307",
+  "har_sonuc_sha256": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+  "kaynak": {
+   "duman_sonuc_sha256": "e2e457bfb6d937ae47ad844f323cecb720500868db0b0d5811ac4f03438b9a5d",
+   "klasorler": {
+    "duman_1isci_ters": {
+     "birlesik_sha256": "fac306cac46f70472eb884d9a736f96190d73f94bfdd1e6b350a58f0ab960909",
+     "dosya": 28,
+     "ek_liste_ozet": "1ae55e979ce9009e6ec643008a91c0ae9611c9697fd7cc2b295125b8d1d55241",
+     "is_listesi_sha256": "9e09cc81b3b7688ac90ba12bd280dba97f9372461f9197078528ee3317f503a4"
+    },
+    "duman_4isci": {
+     "birlesik_sha256": "fac306cac46f70472eb884d9a736f96190d73f94bfdd1e6b350a58f0ab960909",
+     "dosya": 28,
+     "ek_liste_ozet": "1ae55e979ce9009e6ec643008a91c0ae9611c9697fd7cc2b295125b8d1d55241",
+     "is_listesi_sha256": "9e09cc81b3b7688ac90ba12bd280dba97f9372461f9197078528ee3317f503a4"
+    }
+   }
+  },
+  "kimlikler": {
+   "kod": "c442f5ba779c36411317662dc8422a1a296a5a1d1b6b71369eee6f15356c69e0",
+   "motor": "7e2320f4073164c15d298be40a713caaf234130c6cd94f6d45e10a650b7b597f",
+   "ortam": "python 3.12.14; numpy 2.5.1",
+   "parametre": "80c67909654742210e318b1b4e37da77edf9f007a35f26c61faf600100700a6f"
+  },
+  "kod_dondurma_sha256": "0a6ab6b4b5802b5a8d8b9b6bc2e380b195c2ec09b3fbe47e29de5e446bcf521b"
+ }
+}

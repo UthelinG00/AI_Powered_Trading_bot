@@ -1,0 +1,95 @@
+{
+ "degisen": [
+  "/belgeler/ciktilar/v8_banka_20260924_01/V8_DENEME_DEFTERI.csv",
+  "/defter/satir_sayisi",
+  "/kod/kalibrasyon",
+  "/veri/dosya_sayisi",
+  "/veri/veri_kimligi"
+ ],
+ "gerekce": "Kuru kosu (6.15, 2 Ekim) null birimlerinde N1 null degismez denetimi yanlis alarm verdi: gercek D'de fiyat tikleri ve acilis = onceki kapanis rho dortlulerinde cok sayida tam bag uretir; sentetikte exp/log yuvarlamasi (~1e-16) baglari bozar, ham deger lexsort bagli gruplarin sirasini degistirip farkli satirlari esliyordu. Uretec dogru (1e-9 izgara siralamasiyla 122 coin x 4 dilimde ihlal 0). Duzeltme yalniz N1 karsilastirmasi: tol izgarasi (iki kayma) + kesin zincir/ikili esleme; tol, parametre, esik ve null uretimi degismez. Teshis ciktilar/v8_kuru_20261002b/HATA_N1.md; Codex T32-T34.",
+ "hata_testi": "v8/testler/test_v8_rejim_null.py::N1BagSirasiTest (D'den bagimsiz tik fikstur; eski denetim alarm verir, yenisi gecer)",
+ "icerik": {
+  "belgeler": {
+   "ciktilar/v8_asama4_20260927_01/ACIK_SORU_YANITLARI.md": "6407e0dd66444ef91a9f7a73147d5fa05e050080dfbec7f172461cab037de2e2",
+   "ciktilar/v8_asama4_20260927_01/ASAMA4B_KARAR.md": "b4886de51eeffeeda85dea3f5e183682a806a1d38af787c8acf90d695cd156bc",
+   "ciktilar/v8_asama4_20260927_01/BANKA_ONKAYIT_TASLAK.md": "1ff19d1c06ea0aff2cad46e63b65751a49b182dcf35ba082e41c65a19c8a7301",
+   "ciktilar/v8_asama4_20260927_01/CARRY_KAPISI_ONKAYIT_TASLAK.md": "9d722399fef3b6dc388689a26fae453836e08108c01e151766a1539f50530c12",
+   "ciktilar/v8_asama4_20260927_01/KARARLAR.md": "ea8fd9d81208499e2cabd7a6ca4be307b3de6d48242cf514bde93692a9647f31",
+   "ciktilar/v8_asama4_20260927_01/MIMARI.md": "bd2627c4d8ec14ef959547654ac3906aca1bff8ca3a9cab629175a10f1c21c29",
+   "ciktilar/v8_b5_a_esdegerlik_20260930_01/ONKAYIT.md": "1a4ce9c3876b19c179a62b199d431b5828907ef070155f9336dc1df19ecbe26e",
+   "ciktilar/v8_b5_a_esdegerlik_20260930_01/b5_a_esdegerlik.json": "4a76df2675e1f959a33545aeb1d8cd1ff867db863bb217d022e8ac79effb28ea",
+   "ciktilar/v8_banka_20260924_01/V8_DENEME_DEFTERI.csv": "5cb3ed2adecdb8e712cc203cd901ed1010ba88a5da6c4ac464e8bafd7d9bba8d",
+   "ciktilar/v8_har_secimi_20260929_01/ONKAYIT.md": "6a10d8f5f1b9f59fbfd54dd7052e78ca97e7f6094836c06f605aceb7ca6f9d0c",
+   "ciktilar/v8_har_secimi_20260929_01/RAPOR.md": "e460d89d31c702cd0d14097809f505f385453ed75609d6c56631350371d1bebb",
+   "ciktilar/v8_har_secimi_20260929_01/sonuc.json": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+   "ciktilar/v8_kalibrasyon_20260929_01/DUZEY1_OZET.json": "c415e5fdc7f3e7bbe1131a28cc6acdb3843d80d4438d80fb62869e39dde3a875",
+   "ciktilar/v8_kalibrasyon_20260929_01/KOD_DONDURMA.json": "0a6ab6b4b5802b5a8d8b9b6bc2e380b195c2ec09b3fbe47e29de5e446bcf521b",
+   "ciktilar/v8_kalibrasyon_20260929_01/RAPOR.md": "5d9b97988cc8c4e30ff326d71d700e9b969336ac0b16b03c6e9bc7d506ea4ae0",
+   "ciktilar/v8_kalibrasyon_20260929_01/TOPLAMA.json": "cd65c3cde9f163712b3666726fc6aeef07edfc4245c81422580717caa4b2a0ca",
+   "ciktilar/v8_kalibrasyon_20260929_01/bitis_sonuc.json": "326c1df79625a33ae9b67a6818972ef97fb975ae905346a2c153722033c5ee07",
+   "ciktilar/v8_kalibrasyon_20260929_01/duman_kanit.json": "a31b4f3854b949b527d406e2026c59635cc44b8717849fd1e76b98abd4f0f0f6",
+   "ciktilar/v8_kalibrasyon_20260929_01/duman_sonuc.json": "e2e457bfb6d937ae47ad844f323cecb720500868db0b0d5811ac4f03438b9a5d",
+   "ciktilar/v8_kalibrasyon_20260929_01/esdegerlik_502e.json": "1ce53b1347408d91c1cfd4c2a572f134e4dc1f19e3fa91f3e192b888e8ab20aa",
+   "ciktilar/v8_kapi_20260929_01/BELIRSIZLIK_COZUMLERI.md": "cdf7c5e3a69b5cc69c3ad03244b5efd162977d1060b7c64cb6fdf5f5746aaa54",
+   "ciktilar/v8_kapi_20260929_01/OLCUT_LISTESI.md": "7795c6b189725f2827e797f93ba052de4206a39716b7d54c33d34e5d46b4d562",
+   "ciktilar/v8_kapi_sentetik_20261001/ONKAYIT_OLCEK.md": "a1de32d8102681cdc798da0d4e850b592442fedc8182fd053cbc6675d8339dca",
+   "ciktilar/v8_kapi_sentetik_20261001/RAPOR.md": "71a312cd3041dc10f80e4d379e75d682160fdd1031ae5eb7290499c6db1f6452",
+   "ciktilar/v8_kapi_sentetik_20261001/duyarlilik_olcek.json": "33a44c7d2f519cc14b7cb5694fb7876dc45a642b32f3bdea18f28028b7692690",
+   "ciktilar/v8_kapi_sentetik_20261001/kapi_sentetik.py": "ad35d81b12538242e2a50c9b7ff7f7a064c46a3bf7c558625ddd579650a15d96",
+   "ciktilar/v8_kapi_sentetik_20261001/sonuc.json": "5b710aa392ad114d56688916673403d6594e83a438e4fc8135752ca64f0552bc",
+   "ciktilar/v8_sembol_filtreleri_20260930_01/SEMBOL_FILTRELERI.json": "420494732463acc310e4c46556fb352f2f970f3f7e0f73f9bc5fb3f2347ce26d",
+   "ciktilar/v8_sembol_filtreleri_20260930_01/exchangeInfo_ham.json": "73c845e036c8ccb057c431d9668621610d602d029c2892e9cffd046cdd5ccc53"
+  },
+  "defter": {
+   "satir": "A4-carry-kapisi",
+   "satir_sayisi": 23
+  },
+  "kod": {
+   "adaptor": "503dd1ec7bc682c13e1ae89c7c61e6bd8d7380ca5c101e32cfadab40ddaad920",
+   "kalibrasyon": "9131f7b1e99c1b1b3d9f4c55f3853f710e0f864a5e15c19fa363a4e497ba69ac",
+   "kapi": "05394a018cdaf4e4466836ab7cb80462e9fd5b48d0a7d61c1afb9c5d2dbc2ccf",
+   "kilit": "daafadbf2355b068f0af02bcfc1f58b1411015f39c3270b61132f82d55cc4334",
+   "motor": "db13ddad410748c65a82326b1a1fbf5872ec8c3dffc490219f77635aecabb63c"
+  },
+  "ortam": {
+   "cryptography": "50.0.0",
+   "numpy": "2.5.1",
+   "pandas": "3.0.5",
+   "python": "3.12.14"
+  },
+  "parametre": {
+   "har_sonuc": "c5602b2b3350fdb7e07a7105b58a4e08ef9c6b484e9effdf0307cb3a9b8d666a",
+   "kapi": "55d131a0071605d10da733e4a99a5a905f97b6244fbe7b727942943040c7283d",
+   "varsayilan": "7fdcc8192caf48d292687cefa3c506bcd3ecf7a7bb1d28eab135702bf4df3fcf"
+  },
+  "sabitler": {
+   "L": 1.0,
+   "bit_ms": 1782864000000,
+   "kapi_nav0": 100000.0,
+   "kosular": [
+    "ana",
+    "mc2",
+    "mc3",
+    "delist50",
+    "delist90",
+    "k8"
+   ],
+   "t0_ms": 1696118400000
+  },
+  "v1": {
+   "rapor": "test_20261002T144855Z",
+   "sha256": "e1900112103b2572e70a9cfa7f72d190e23d9fe86d4d84391dc2d2bc9e9a5d26",
+   "test_dosyasi": 59,
+   "toplam": 59
+  },
+  "veri": {
+   "gelistirme_evreni": "343dead42d44c04b86f4e7ce6b08da477b98afa63e626243865fd6cf2d6b815c",
+   "manifest": "5eabe3609906b74617690f85b27270cca1ba8a2d1d1e09e9408ff3276be21476"
+  }
+ },
+ "ilk_kilit_sha256": "bea874f342e4f182e00573b6a76645ee21620e35e7350bf9c0074f5185c2c700",
+ "onceki_sha256": "bea874f342e4f182e00573b6a76645ee21620e35e7350bf9c0074f5185c2c700",
+ "sira": 1,
+ "tur": "banka_oncesi",
+ "zaman_utc": "2026-10-02T14:49:22Z"
+}

@@ -1,0 +1,30 @@
+{
+ "birim_sayisi_4isci": 28,
+ "birim_sayisi_1isci": 28,
+ "ek_liste_ayni": true,
+ "farkli_dosya": [],
+ "gecti": true,
+ "kosu_4isci": {
+  "kesinti_oncesi": {
+   "bitmis": 5,
+   "bu_kosuda": 5,
+   "kalan": 23,
+   "liste_sha": "9e09cc81b3b7688ac90ba12bd280dba97f9372461f9197078528ee3317f503a4",
+   "sure_sn": 774.4
+  },
+  "devam": {
+   "bitmis": 28,
+   "bu_kosuda": 23,
+   "kalan": 0,
+   "liste_sha": "9e09cc81b3b7688ac90ba12bd280dba97f9372461f9197078528ee3317f503a4",
+   "sure_sn": 2136.3
+  }
+ },
+ "kosu_1isci_ters": {
+  "bitmis": 28,
+  "bu_kosuda": 28,
+  "kalan": 0,
+  "liste_sha": "9e09cc81b3b7688ac90ba12bd280dba97f9372461f9197078528ee3317f503a4",
+  "sure_sn": 6429.6
+ }
+}

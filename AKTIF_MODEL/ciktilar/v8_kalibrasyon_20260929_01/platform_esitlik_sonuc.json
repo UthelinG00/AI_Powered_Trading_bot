@@ -1,0 +1,22 @@
+{
+ "platform": "Linux-7.0.0-30-generic-x86_64-with-glibc2.43",
+ "islemci": "x86_64",
+ "secilen": [
+  "d2_a000_y010_A_birincil",
+  "d2_a000_y010_B_birincil",
+  "d2_a000_y010_B_x2"
+ ],
+ "kosu": {
+  "bitmis": 3,
+  "bu_kosuda": 3,
+  "kalan": 0,
+  "liste_sha": "fa39cf5c701bb38a994e8dbced399f638070f72fc9ece86dcbadd22a15facf43"
+ },
+ "sure_sn": 316.2,
+ "ayni": {
+  "d2_a000_y010_A_birincil.json": false,
+  "d2_a000_y010_B_birincil.json": false,
+  "d2_a000_y010_B_x2.json": false
+ },
+ "gecti": false
+}
